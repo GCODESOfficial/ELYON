@@ -1,23 +1,7 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local'
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-const merriweather = localFont({
-  src: '/fonts/Merriweather-Regular.ttf',
-  variable: '--font-merriweather',
-})
-
-const dm_sans = localFont({
-  src: '/fonts/DMSans-Regular.ttf',
-  variable: '--font-dm-sans',
-});
-
-const great_vibes = localFont({
-  src: '/fonts/GreatVibes-Regular.ttf',
-  variable: '--font-great-vibes',
-});
 
 export const metadata: Metadata = {
   title: "Elyon Ministry",
@@ -32,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${merriweather.variable} ${dm_sans.variable} ${great_vibes.variable} antialiased`}
+        className={`antialiased`}
       >
         <Navbar />
         {children}

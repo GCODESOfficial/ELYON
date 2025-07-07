@@ -1,5 +1,23 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-merriweather',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-dm-sans',
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 
 export default function HomePage() {
   return (
@@ -14,7 +32,7 @@ export default function HomePage() {
           }}
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
-          <p className="text-lg md:text-xl mb-4 font-light italic">Welcome to</p>
+          <p className={`text-lg md:text-xl mb-4 italic ${greatVibes.className}`}>Welcome to</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Elyon Life Ministry</h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">
             A place to worship, grow, and experience God's transforming love in community.

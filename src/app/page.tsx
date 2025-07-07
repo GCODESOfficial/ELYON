@@ -1,17 +1,17 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
 const merriweather = Merriweather({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-merriweather',
+  weight: ['700'],
 });
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-dm-sans',
+  weight: ['500', '600'],
 });
 
 const greatVibes = Great_Vibes({
@@ -28,45 +28,44 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/placeholder.svg?height=800&width=1200')`,
+            backgroundImage: `url('/images/hero-desktop.png')`,
           }}
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
-          <p className={`text-lg md:text-xl mb-4 italic ${greatVibes.className}`}>Welcome to</p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Elyon Life Ministry</h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+          <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
+          <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${merriweather.className}`}>Elyon Life Ministry</h1>
+          <p className={`text-lg md:text-xl max-w-2xl mx-auto mb-8 ${dmSans.className}`}>
             A place to worship, grow, and experience God's transforming love in community.
           </p>
         </div>
       </section>
 
       {/* Sharing God's Love Section */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <div className="bg-black rounded-lg overflow-hidden">
+      <section className="pt-16 md:pt-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="order-2 md:order-1 flex-1">
+              <div className="relative rounded-lg">
                 <Image
                   src="/images/mission.png"
                   alt="Worship service"
                   width={400}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover max-w-[475px] max-h-[480px]"
                 />
               </div>
             </div>
-            <div className="order-1 md:order-2 space-y-6">
-              <div className="text-[#CFA83C] text-sm font-semibold uppercase tracking-wide">Our Mission</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">Sharing God's Love and Changing Lives</h2>
-              <p className="text-[#1A1A1A] text-base md:text-lg leading-relaxed">
+            <div className="order-1 md:order-2 space-y-6 flex-1">
+              <div className={`text-[#3C4A5A] text-xs md:text-[16px] font-medium uppercase tracking-wide ${dmSans.className}`}>Our Mission</div>
+              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>Sharing God's Love and Changing Lives</h2>
+              <p className={`text-[#1A1A1A] text-sm md:text-xl leading-relaxed ${dmSans.className}`}>
                 Since 2017, God has been the author of our journey as we seek to be ready for His Kingdom. We believe in
                 the power of community, worship, and spiritual growth to transform lives and bring hope to our world.
               </p>
-              <Link
-                href="/about"
-                className="inline-block bg-[#B33A3A] text-white px-8 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold"
-              >
-                Read More
+              <Link href="/about">
+                <Button className={`bg-[#C83737] text-white px-6 py-6 rounded-full font-medium text-sm md:text-lg cursor-pointer ${dmSans.className} hover:bg-[#C83737]/90 transition-colors`}>
+                  Read More
+                </Button>
               </Link>
             </div>
           </div>
@@ -74,62 +73,64 @@ export default function HomePage() {
       </section>
 
       {/* Quote Section */}
-      <section className="py-16 bg-[#1A1A1A] text-white text-center">
+      <section className="pt-16 md:pt-28 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <blockquote className="text-2xl md:text-3xl font-light italic mb-8">
+          <blockquote className={`text-2xl md:text-3xl font-semibold mb-8 ${dmSans.className}`}>
             "And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of
             many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
           </blockquote>
-          <cite className="text-[#CFA83C] text-lg">- Isaiah 58:12 (KJV)</cite>
+          <cite className={`text-[#C83737] text-sm md:text-xl font-semibold ${dmSans.className}`}>- Isaiah 58:12 (KJV)</cite>
         </div>
       </section>
 
       {/* Join Us Section */}
-      <section className="py-16 md:py-24">
+      <section className="md:mt-20 py-10 md:py-20 max-w-[1120px] mx-auto bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-16">
+          <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-5 md:mb-10 ${dmSans.className}`}>Fellowship with us</div>
+          <h2 className={`text-2xl md:text-[44px] mx-auto max-w-[571px] font-bold text-[#1A1A1A] mb-10 md:mb-20 ${merriweather.className}`}>
             Join Us for Worship, Fellowship, and Growth
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-48 bg-gradient-to-br from-orange-400 to-red-500"></div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-white bg-[#1A1A1A] py-2 px-4 rounded">
-                  Sunday Worship Service
-                </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[936px] mx-auto">
+            {/* Card 1: Sunday Worship Service */}
+            <div className="relative group">
+              <Image
+                src="/images/worship.png"
+                alt="Sunday Worship Service"
+                width={400}
+                height={300}
+                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+              />
+              <div className="absolute bottom-0 w-full py-4 flex justify-center">
+                <span className="text-white text-lg font-semibold">Sunday Worship Service</span>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-48 bg-black">
-                <Image
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Teaching and discipleship"
-                  width={300}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-white bg-[#1A1A1A] py-2 px-4 rounded">
-                  Teaching and Discipleship Training
-                </h3>
+            {/* Card 2: Healing and Deliverance Service */}
+            <div className="relative overflow-hidden shadow-lg group">
+              <Image
+                src="/images/healing.png"
+                alt="Healing and Deliverance Service"
+                width={400}
+                height={300}
+                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+              />
+              <div className="absolute bottom-0 w-full py-4 flex justify-center">
+                <span className="text-white text-lg font-semibold">Healing and Deliverance Service</span>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-48 bg-black">
-                <Image
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Outreach"
-                  width={300}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-white bg-[#1A1A1A] py-2 px-4 rounded">Outreach</h3>
+            {/* div 3: Communion Service */}
+            <div className="relative overflow-hidden shadow-lg group">
+              <Image
+                src="/images/communion.png"
+                alt="Communion Service"
+                width={400}
+                height={300}
+               className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+              />
+              <div className="absolute bottom-0 w-full py-4 flex justify-center">
+                <span className="text-white text-lg font-semibold">Communion Service</span>
               </div>
             </div>
           </div>

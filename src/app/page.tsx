@@ -27,11 +27,15 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center text-white">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
+        {/* Desktop background */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/images/hero-desktop.png')`,
-          }}
+          className="absolute inset-0 bg-cover bg-center hidden md:block"
+          style={{ backgroundImage: `url('/images/hero-desktop.png')` }}
+        ></div>
+        {/* Mobile background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center md:hidden"
+          style={{ backgroundImage: `url('/images/hero-mobile.png')` }}
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
           <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
@@ -77,11 +81,11 @@ export default function HomePage() {
       {/* Quote Section */}
       <section className="pt-16 md:pt-28 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <blockquote className={`text-2xl md:text-3xl font-semibold mb-8 ${dmSans.className}`}>
+          <blockquote className={`text-base md:text-[28px] font-semibold ${dmSans.className}`}>
             "And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of
             many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
           </blockquote>
-          <cite className={`text-[#C83737] text-sm md:text-xl font-semibold ${dmSans.className}`}>- Isaiah 58:12 (KJV)</cite>
+          <cite className={`text-[#C83737] mb-10 md:mb-0 text-sm md:text-2xl font-semibold ${dmSans.className}`}>- Isaiah 58:12 (KJV)</cite>
         </div>
       </section>
 
@@ -209,7 +213,7 @@ export default function HomePage() {
             <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
             <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
 
-            <div className="bg-[#1A1A1A] mb-4 flex flex-col max-w-[403px] mx-auto rounded-xl">
+            {/* <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
               <div className="pt-2 px-2 flex justify-between items-center">
                 <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   6:30am
@@ -222,12 +226,12 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="text-white py-4">(GMT +1)</div>
-            </div>
-                 <Link
-                href="/contact"
-              >
-                <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
-              </Link>
+            </div> */}
+            <Link
+              href="/contact"
+            >
+              <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
+            </Link>
           </div>
         </div>
         <div className="h-[300px] md:h-[350px]"></div>

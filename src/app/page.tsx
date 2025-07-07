@@ -209,25 +209,25 @@ export default function HomePage() {
             <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
             <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
 
-            <div className="mb-4 flex flex-col">
-              <div className="bg-[#1A1A1A] py-2 flex justify-center items-center gap-4">
-                <div className={`${dmSans.className} px-6 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+            <div className="bg-[#1A1A1A] mb-4 flex flex-col max-w-[403px] mx-auto rounded-xl">
+              <div className="pt-2 px-2 flex justify-between items-center">
+                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-6 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-6 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   9:30am
                 </div>
               </div>
-              <div className="text-white">(GMT +1)</div>
-              <Link
+              <div className="text-white py-4">(GMT +1)</div>
+            </div>
+                 <Link
                 href="/contact"
               >
-                <Button className={`w-full max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
+                <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
               </Link>
-            </div>
           </div>
         </div>
         <div className="h-[300px] md:h-[350px]"></div>

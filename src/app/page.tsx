@@ -4,6 +4,7 @@ import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialsCarousel";
 import EventsCarousel from "@/components/EventsCarousel";
+import MemoriesGallery from "@/components/MemoriesGallery";
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -183,25 +184,11 @@ export default function HomePage() {
       <section className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Memories</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} className="aspect-square bg-black rounded-lg overflow-hidden">
-                <Image
-                  src={`/placeholder.svg?height=200&width=200&text=Memory${i + 1}`}
-                  alt={`Memory ${i + 1}`}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-
+          <MemoriesGallery />
           <div className="text-center mt-8">
-            <button className="border border-[#1A1A1A] text-[#1A1A1A] px-8 py-3 rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
+            <Button className={`${dmSans.className} border border-[#3C4A5A] bg-transparent hover:bg-transparent cursor-pointer text-[#3C4A5A] px-8 py-3 rounded-full`}>
               View more
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -212,34 +199,39 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/placeholder.svg?height=600&width=1200')`,
+            backgroundImage: `url('/images/footer-hero.png')`,
           }}
         ></div>
-        <div className="relative z-20 max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">See You This Sunday</h2>
-          <p className="text-lg mb-8">Grow stronger in your walk with God and connect with a loving church family.</p>
 
-          <div className="bg-white text-[#1A1A1A] rounded-lg p-8 mb-8">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
-              <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
-                6:30am
-              </button>
-              <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
-                8:00am
-              </button>
-              <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
-                9:30am
-              </button>
+        {/* sunday time card*/}
+        <div className="absolute left-1/2 -translate-x-1/2 translate-y-1/2 -bottom-24 z-20 w-full flex justify-center pointer-events-none">
+          <div className="bg-[#FFFFFF] max-w-[1120px] w-full mx-auto px-4 rounded-xl shadow-lg pointer-events-auto py-10 md:py-20">
+            <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
+            <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
+
+            <div className="text-[#1A1A1A] p-8 mb-8">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+                <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
+                  6:30am
+                </button>
+                <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
+                  8:00am
+                </button>
+                <button className="px-6 py-3 border-2 border-[#1A1A1A] rounded-lg hover:bg-[#1A1A1A] hover:text-white transition-colors">
+                  9:30am
+                </button>
+              </div>
+              <div className="bg-[#1A1A1A] text-white py-2 px-4 rounded-lg mb-6">(GMT +1)</div>
+              <Link
+                href="/contact"
+                className="block w-full bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold"
+              >
+                Contact us
+              </Link>
             </div>
-            <div className="bg-[#1A1A1A] text-white py-2 px-4 rounded-lg mb-6">(GMT +1)</div>
-            <Link
-              href="/contact"
-              className="block w-full bg-[#B33A3A] text-white py-4 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold"
-            >
-              Contact us
-            </Link>
           </div>
         </div>
+        <div className="h-[300px] md:h-[350px]"></div>
       </section>
     </div>
   )

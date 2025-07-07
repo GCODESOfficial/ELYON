@@ -1,23 +1,25 @@
 import Link from "next/link"
+import Image from "next/image"
 import { MessageCircle, Twitter, Facebook, Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1B2A] text-white">
+    <footer className="bg-[#060606] text-white md:pt-[400px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and Description */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-[#CFA83C] rounded-full flex items-center justify-center">
-                <span className="text-[#0D1B2A] font-bold">ELM</span>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">ELYON LIFE</h3>
-                <p className="text-[#CFA83C] text-sm">MINISTRY</p>
-              </div>
+           {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
+              <Image
+                src="/images/logo.svg"
+                alt="Elyon Ministry's Logo"
+                fill
+                style={{ objectFit: "contain" }}
+                sizes="(max-width: 768px) 32px, 40px"
+                priority
+              />
             </div>
-          </div>
+          </Link>
 
           {/* Quick Links */}
           <div>

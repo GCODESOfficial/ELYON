@@ -22,7 +22,6 @@ const testimonials = [
         text: "I want to thank the Almighty for using everyone in this ministry to bless my life. The word of God has been a source of strength and encouragement, and I'm grateful for the sense of purpose and empowerment I've found in this community.",
         author: "Emem James",
     },
-    // Add more testimonials as needed
 ];
 
 function TestimonialCarousel() {
@@ -31,8 +30,8 @@ function TestimonialCarousel() {
 
     useEffect(() => {
         if (!containerRef.current) return;
-        const scrollStep = 1; // px per tick
-        const scrollInterval = 20; // ms
+        const scrollStep = 1;
+        const scrollInterval = 20;
         let interval: NodeJS.Timeout | null = null;
 
         function startScroll() {
@@ -45,7 +44,7 @@ function TestimonialCarousel() {
                     currentScroll >=
                     containerRef.current.scrollWidth - containerRef.current.clientWidth
                 ) {
-                    currentScroll = 0; // loop
+                    currentScroll = 0;
                 }
                 containerRef.current.scrollLeft = currentScroll;
             }, scrollInterval);

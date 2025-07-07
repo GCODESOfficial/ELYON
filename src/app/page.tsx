@@ -2,8 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import TestimonialCarousel from "@/components/TestimonialsCarousel";
+import EventsCarousel from "@/components/EventsCarousel";
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -140,51 +140,41 @@ export default function HomePage() {
 
       {/* Testimony Section */}
       <section className="py-10 md:py-20 bg-[#F5F5F5]">
-        <div className="py-10 rounded-xl max-w-[1120px] bg-[#FFFFFF] mx-auto px-4 text-center">
+        <div className="py-10 rounded-xl max-w-[1120px] bg-[#FFFFFF] mx-auto px-1 text-center">
           <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-3 md:mb-6 ${dmSans.className}`}>Our stories</div>
           <h2 className={`max-w-[408px] mx-auto text-lg md:text-2xl font-semibold text-[#1A1A1A] mb-10 md:20 ${dmSans.className}`}>
             Every testimony is a reminder that God is still working.
           </h2>
-
           {/* testimonials carousel */}
           <TestimonialCarousel />
         </div>
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">Upcoming Events</h2>
-            <Link href="/events" className="text-[#CFA83C] hover:underline">
-              See more →
-            </Link>
+      <section className="py-16 max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="w-full max-w-[708px]">
+            <h2 className={`text-2xl md:text-[40px] mb-5 md:mb-10 font-bold text-[#1A1A1A] ${merriweather.className}`}>Upcoming Events</h2>
+            <EventsCarousel />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-64 bg-gradient-to-br from-yellow-600 to-orange-700"></div>
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-2 text-[#1A1A1A]">Special Event</h3>
-                <p className="text-[#1A1A1A]">Join us for this special gathering</p>
-              </div>
+          <div className="relative group">
+            <h1 className={`text-[#3C4A5A] mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}>Hear God’s Word <br />Spoken to Your Heart.</h1>
+            <Image
+              src="/images/mission.png"
+              alt="Sunday Worship Service"
+              width={400}
+              height={300}
+              className="w-full max-w-[296px] h-full rounded-xl md:max-h-[400px] object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
+              <div className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}>Sermons</div>
+              <div className={`text-white text-2xl md:text-3xl font-bold mb-6 ${merriweather.className}`}>God’s Word</div>
+              <button className="bg-[#C83737] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#B33A3A] transition-colors w-fit">
+                Watch Now
+              </button>
             </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <div className="h-64 bg-black">
-                <Image
-                  src="/placeholder.svg?height=250&width=400"
-                  alt="God's Word"
-                  width={400}
-                  height={250}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="bg-[#B33A3A] text-white px-3 py-1 rounded text-sm inline-block mb-2">God's Word</div>
-                <h3 className="font-bold text-xl text-[#1A1A1A]">Bible Study</h3>
-              </div>
-            </div>
+          </div>
+          <div>
           </div>
         </div>
       </section>

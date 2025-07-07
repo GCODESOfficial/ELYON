@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import TestimonialCarousel from "@/components/TestimonialsCarousel";
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -84,7 +85,7 @@ export default function HomePage() {
       </section>
 
       {/* Join Us Section */}
-      <section className="md:mt-20 py-10 md:py-20 max-w-[1120px] mx-auto bg-[#FFFFFF]">
+      <section className="md:mt-20 py-10 md:py-20 max-w-[1120px] rounded-xl mx-auto bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-5 md:mb-10 ${dmSans.className}`}>Fellowship with us</div>
           <h2 className={`text-2xl md:text-[44px] mx-auto max-w-[571px] font-bold text-[#1A1A1A] mb-10 md:mb-20 ${merriweather.className}`}>
@@ -101,8 +102,8 @@ export default function HomePage() {
                 height={300}
                 className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center">
-                <span className="text-white text-lg font-semibold">Sunday Worship Service</span>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
+                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Sunday <br />Worship Service</span>
               </div>
             </div>
 
@@ -115,8 +116,8 @@ export default function HomePage() {
                 height={300}
                 className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center">
-                <span className="text-white text-lg font-semibold">Healing and Deliverance Service</span>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
+                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Healing and <br />Deliverance Service</span>
               </div>
             </div>
 
@@ -127,10 +128,10 @@ export default function HomePage() {
                 alt="Communion Service"
                 width={400}
                 height={300}
-               className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center">
-                <span className="text-white text-lg font-semibold">Communion Service</span>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
+                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Communion <br />Service</span>
               </div>
             </div>
           </div>
@@ -138,32 +139,15 @@ export default function HomePage() {
       </section>
 
       {/* Testimony Section */}
-      <section className="py-16 bg-[#F5F5F5]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="text-[#CFA83C] text-sm font-semibold uppercase tracking-wide mb-4">Our Testimony</div>
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-8">
+      <section className="py-10 md:py-20 bg-[#F5F5F5]">
+        <div className="py-10 rounded-xl max-w-[1120px] bg-[#FFFFFF] mx-auto px-4 text-center">
+          <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-3 md:mb-6 ${dmSans.className}`}>Our stories</div>
+          <h2 className={`max-w-[408px] mx-auto text-lg md:text-2xl font-semibold text-[#1A1A1A] mb-10 md:20 ${dmSans.className}`}>
             Every testimony is a reminder that God is still working.
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="space-y-4">
-              <p className="text-[#1A1A1A] leading-relaxed">
-                I want to thank the Almighty for using everyone in this ministry to bless my life. The word of God has
-                been a source of strength and encouragement, and I'm grateful for the sense of purpose and empowerment
-                I've found in this community.
-              </p>
-              <p className="text-[#CFA83C] font-semibold italic">- Jenny Bassey</p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-[#1A1A1A] leading-relaxed">
-                I want to thank the Almighty for using everyone in this ministry to bless my life. The word of God has
-                been a source of strength and encouragement, and I'm grateful for the sense of purpose and empowerment
-                I've found in this community.
-              </p>
-              <p className="text-[#CFA83C] font-semibold italic">- Emem James</p>
-            </div>
-          </div>
+          {/* testimonials carousel */}
+          <TestimonialCarousel />
         </div>
       </section>
 

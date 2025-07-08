@@ -1,64 +1,80 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import { Button } from "@/components/ui/button";
+import AboutCarousel from "@/components/AboutCarousel";
+
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['700'],
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
-
       {/* Hero Section */}
-      <section className="relative h-64 md:h-96 flex items-center justify-center text-white">
+      <section className="relative h-64 md:h-[440px] flex items-center justify-center text-white">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/placeholder.svg?height=400&width=1200')`,
+            backgroundImage: `url('/images/about/about-hero.png')`,
           }}
         ></div>
-        <div className="relative z-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <div className="flex items-center justify-center space-x-2 text-sm">
+        <div className="absolute z-20 left-0 bottom-0 p-4 md:p-8">
+          <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>About Us</h1>
+          <div className={`${dmSans.className}flex text-xs md:text-lg space-x-2 font-medium`}>
             <Link href="/" className="hover:text-[#CFA83C]">
               Home
             </Link>
             <span>›</span>
-            <span>About us</span>
+            <span className="text-[#8E8E8E]">About us</span>
           </div>
         </div>
       </section>
 
+      {/* About Carousel Section */}
+      {/* <section className="w-full max-w-5xl mx-auto py-8">
+        <AboutCarousel height="320px" />
+      </section> */}
+
       {/* Meet Our Pastor Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 w-full md:max-w-[1120px] mx-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="text-[#CFA83C] text-sm font-semibold uppercase tracking-wide">Meet Our Pastor</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">PRINCE ESSHIETT</h2>
-              <p className="text-[#CFA83C] text-lg font-semibold">General Overseer</p>
-              <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
+            <div className="">
+              <div className={`text-[#3C4A5A] mb-4 md:mb-10 text-xs md:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Meet Our Pastor</div>
+              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>PRINCE ESSHIETT</h2>
+              <p className={`${dmSans.className} mb-4 md:mb-10 text-[#3C4A5A] text-base md:text-2xl font-semibold`}>General Overseer</p>
+              <div className={`${dmSans.className} text-sm md:textlg text-[#3C4A5A] leading-relaxed`}>
                 <p>
-                  Prince Esshiett is a servant of God who has been in the ministry for a number of years. He carries the
-                  burden of the Gospel and has been called by God to minister the Gospel of our Lord Jesus Christ to
-                  this generation.
-                </p>
-                <p>
-                  In 2016, God led him to pioneer the church of our Lord Jesus Christ. Being one who has the revelation
-                  of the church in his heart, he established the church to be a place of God's presence where believers
-                  can come and experience the transforming power of God.
-                </p>
-                <p>
-                  He believes in the local church transformation of the life of the people of God, and he has been a
-                  shepherd and a father of love.
-                </p>
+                  Prince Esshiett is a servant of God who has been in the ministry for a couple of years.
+                  He spends his time being used by God to minister to people of all works of life irrespective of age, color, or race etc., in order to effect positive changes in their lives by the power of the Holy Ghost.
+                  Being one who has dedicated his life solely to the things of God, he believes in the total positive transformation of man by the power of God, and is passionate about touching lives through charitable works like Jesus did.
+                  Apart from being a servant of God, he's also a husband and a father of two. </p>
               </div>
             </div>
-            <div className="order-first md:order-last">
+            <div className="">
               <div className="bg-[#0D1B2A] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=500&width=400"
+                  src="/images/about/eshiett.png"
                   alt="Prince Esshiett"
                   width={400}
                   height={500}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full max-h-[480px] object-cover"
                 />
               </div>
             </div>
@@ -67,26 +83,21 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white w-full md:max-w-[1120px] mx-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <div className="text-[#CFA83C] text-sm font-semibold uppercase tracking-wide">Who We Are</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A]">Our Story</h2>
-              <div className="space-y-4 text-[#1A1A1A] leading-relaxed">
+              <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Who We Are</div>
+              <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A]`}>Our Story</h2>
+              <div className={`space-y-4 text-sm md:text-lg text-[#3C4A5A] leading-relaxed ${dmSans.className}`}>
                 <p>
-                  A divine encounter changed my life 2017 opened revealed the ministry that was to come. That encounter,
-                  also known as Light and Fire Revelational Convention, 2017, was used mightily by God to birth many
-                  things, and I became a different person.
+                  A divine movement began in May 2017, geared towards the spiritual emancipation, restoration, and divine awakening of God's people. This movement, also known as Light and Fire Renaissance Commission  (LFRC), was used mightily by God to touch lives, save souls, and liberate God's people from all forms of darkness and spiritual captivity.
                 </p>
                 <p>
-                  Today, Light and Fire Revelational Convention has become a platform that God uses to Minister to
-                  people and bring them into a deeper relationship with Him.
+                  Today, Light and Fire Renaissance Commission has metamorphosed into Elyon Life Ministry, a vision with a greater mandate from God, to take the glorious gospel of Jesus Christ to the ends of the earth and transform lives positively through the victorious light of God. 
                 </p>
                 <p>
-                  We are a ministry where God's love is a place where God builds His people and makes them into vessels
-                  of honor and service. We believe in the power of God's word, where God builds His people and makes
-                  them into vessels of honor and service.
+                 Welcome to Elyon Life Ministry, a place where God lives, a place where the Spirit of God reigns, a place of Power and divine authority, a place of favour, grace and blessings, a place where God's love takes centre stage, and a place of God's light, where darkness is annihilated and the peace of God is enthroned in every aspect of our lives.
                 </p>
               </div>
             </div>

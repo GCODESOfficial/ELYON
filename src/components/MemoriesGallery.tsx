@@ -33,20 +33,44 @@ export default function MemoriesGallery() {
           </div>
         ))}
       </div>
-      {/* Mobile: 3 columns, 4 rows */}
+      {/* Mobile: Custom 3-column vertical gallery for new images only */}
       <div className="grid grid-cols-3 gap-3 md:hidden">
-        {images.map((src, i) => (
-          <div key={i} className="aspect-square bg-black rounded-lg overflow-hidden">
-            <Image
-              src={src}
-              alt={`Memory ${i + 1}`}
-              width={400}
-              height={400}
-              className="w-full h-full object-cover"
-              priority={i < 3}
-            />
+        {/* First column */}
+        <div className="flex flex-col gap-3">
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-1.png" alt="Memory m-1" width={400} height={600} className="w-full h-full object-cover" />
           </div>
-        ))}
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-2.png" alt="Memory m-2" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-3.png" alt="Memory m-3" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+        </div>
+        {/* Second column */}
+        <div className="flex flex-col gap-3">
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-4.png" alt="Memory m-4" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-5.png" alt="Memory m-5" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-6.png" alt="Memory m-6" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+        </div>
+        {/* Third column */}
+        <div className="flex flex-col gap-3">
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-7.png" alt="Memory m-7" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-8.png" alt="Memory m-8" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
+            <Image src="/images/memories/memories-m-9.png" alt="Memory m-9" width={400} height={600} className="w-full h-full object-cover" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -73,7 +73,7 @@ function TestimonialCarousel() {
                 {testimonials.map((t, i) => (
                     <div
                         key={i}
-                        className="min-w-[500px] max-w-[700px] bg-[#F5F5F5] rounded-xl shadow py-8 px-4 mx-6"
+                        className="min-w-[260px] max-w-[320px] md:min-w-[500px] md:max-w-[700px] bg-[#FFFFFF] md:bg-[#F5F5F5] rounded-xl shadow py-8 px-4 mx-6"
                         style={{ display: "inline-block" }}
                     >
                         <p className={`text-[#3C4A5A] leading-relaxed font-medium text-base md:text-xl mb-4 ${dmSans.className}`}>{t.text}</p>
@@ -84,7 +84,7 @@ function TestimonialCarousel() {
                 {testimonials.map((t, i) => (
                     <div
                         key={i + testimonials.length}
-                        className="min-w-[500px] max-w-[700px] bg-[#F5F5F5] rounded-lg shadow py-8 px-4 mx-6"
+                        className="min-w-[260px] max-w-[320px] md:min-w-[500px] md:max-w-[700px] bg-[#FFFFFF] md:bg-[#F5F5F5] rounded-lg shadow py-8 px-4 mx-6"
                         style={{ display: "inline-block" }}
                     >
                         <p className={`text-[#3C4A5A] leading-relaxed font-medium text-base md:text-xl mb-4 ${dmSans.className}`}>{t.text}</p>

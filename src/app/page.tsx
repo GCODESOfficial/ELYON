@@ -99,16 +99,19 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[936px] mx-auto">
             {/* Card 1: Sunday Worship Service */}
-            <div className="relative group">
+            <div className="relative group w-full">
               <Image
                 src="/images/worship.png"
                 alt="Sunday Worship Service"
                 width={400}
                 height={300}
-                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
               />
               <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
-                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Sunday <br />Worship Service</span>
+                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>
+                  Sunday <br />
+                  Worship Service
+                </span>
               </div>
             </div>
 
@@ -119,7 +122,7 @@ export default function HomePage() {
                 alt="Healing and Deliverance Service"
                 width={400}
                 height={300}
-                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
               />
               <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
                 <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Healing and <br />Deliverance Service</span>
@@ -133,7 +136,7 @@ export default function HomePage() {
                 alt="Communion Service"
                 width={400}
                 height={300}
-                className="w-full max-w-[296px] max-h-[240px] md:max-h-[357px] object-cover"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
               />
               <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
                 <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Communion <br />Service</span>
@@ -144,8 +147,8 @@ export default function HomePage() {
       </section>
 
       {/* Testimony Section */}
-      <section className="py-10 md:py-20 bg-[#F5F5F5]">
-        <div className="py-10 rounded-xl max-w-[1120px] bg-[#FFFFFF] mx-auto px-1 text-center">
+      <section className="py-10 md:py-20 bg-[#F5F5F5] md:bg-[#FFFFFF]">
+        <div className="py-10 rounded-xl max-w-[1120px] bg-[#F5F5F5] md:bg-[#FFFFFF] mx-auto px-1 text-center">
           <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-3 md:mb-6 ${dmSans.className}`}>Our stories</div>
           <h2 className={`max-w-[408px] mx-auto text-lg md:text-2xl font-semibold text-[#1A1A1A] mb-10 md:20 ${dmSans.className}`}>
             Every testimony is a reminder that God is still working.
@@ -163,13 +166,13 @@ export default function HomePage() {
             <EventsCarousel />
           </div>
           <div className="relative group">
-            <h1 className={`text-[#3C4A5A] mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}>Hear God’s Word <br />Spoken to Your Heart.</h1>
+            <h1 className={`text-[#3C4A5A] mt-10 md:mt-0 mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}>Hear God’s Word <br />Spoken to Your Heart.</h1>
             <Image
               src="/images/mission.png"
               alt="Sunday Worship Service"
               width={400}
               height={300}
-              className="w-full max-w-[296px] h-full rounded-xl md:max-h-[400px] object-cover"
+              className="w-full md:max-w-[296px] h-full rounded-xl md:max-h-[400px] object-cover"
             />
             <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
               <div className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}>Sermons</div>

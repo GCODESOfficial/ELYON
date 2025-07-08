@@ -35,7 +35,7 @@ export default function AboutPage() {
             backgroundImage: `url('/images/about/about-hero.png')`,
           }}
         ></div>
-        <div className="absolute z-20 left-0 bottom-0 p-4 md:p-8">
+        <div className="absolute z-20 left-0 md:left-14 bottom-0 p-4 md:p-8">
           <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>About Us</h1>
           <div className={`${dmSans.className}flex text-xs md:text-lg space-x-2 font-medium`}>
             <Link href="/" className="hover:text-[#CFA83C]">

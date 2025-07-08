@@ -6,9 +6,11 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa";
 import { CgFacebook } from "react-icons/cg";
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#060606] text-white">
@@ -31,19 +33,29 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="hover:text-[#CFA83C] transition-colors">
+            <Link href="/" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/" ? " text-[#CFA83C]" : ""}`
+            }>
               Home
             </Link>
-            <Link href="/about" className="hover:text-[#CFA83C] transition-colors">
+            <Link href="/about" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/about" ? " text-[#CFA83C]" : ""}`
+            }>
               About us
             </Link>
-            <Link href="/events" className="hover:text-[#CFA83C] transition-colors">
+            <Link href="/events" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/events" ? " text-[#CFA83C]" : ""}`
+            }>
               Events
             </Link>
-            <Link href="/give" className="hover:text-[#CFA83C] transition-colors text-[#CFA83C]">
+            <Link href="/give" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/give" ? " text-[#CFA83C]" : ""}`
+            }>
               Give
             </Link>
-            <Link href="/contact" className="hover:text-[#CFA83C] transition-colors">
+            <Link href="/contact" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/contact" ? " text-[#CFA83C]" : ""}`
+            }>
               Contact
             </Link>
           </div>
@@ -65,19 +77,19 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-40 bg-[#060606] flex flex-col justify-between">
             <div className="flex-1 flex flex-col mt-5 space-y-6">
-              <Link href="/" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
+              <Link href="/" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/" ? " text-[#CFA83C]" : ""}`}>
                 Home
               </Link>
-              <Link href="/about" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
+              <Link href="/about" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/about" ? " text-[#CFA83C]" : ""}`}>
                 About us
               </Link>
-              <Link href="/events" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
+              <Link href="/events" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/events" ? " text-[#CFA83C]" : ""}`}>
                 Events
               </Link>
-              <Link href="/give" className="block px-3 py-2 text-[#CFA83C] text-center">
+              <Link href="/give" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/give" ? " text-[#CFA83C]" : ""}`}>
                 Give
               </Link>
-              <Link href="/contact" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
+              <Link href="/contact" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/contact" ? " text-[#CFA83C]" : ""}`}>
                 Contact
               </Link>
             </div>

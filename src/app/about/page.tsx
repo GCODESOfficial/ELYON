@@ -46,11 +46,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Carousel Section */}
-      {/* <section className="w-full max-w-5xl mx-auto py-8">
-        <AboutCarousel height="320px" />
-      </section> */}
-
       {/* Meet Our Pastor Section */}
       <section className="py-16 md:py-24 w-full md:max-w-[1120px] mx-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,47 +89,31 @@ export default function AboutPage() {
                   A divine movement began in May 2017, geared towards the spiritual emancipation, restoration, and divine awakening of God's people. This movement, also known as Light and Fire Renaissance Commission  (LFRC), was used mightily by God to touch lives, save souls, and liberate God's people from all forms of darkness and spiritual captivity.
                 </p>
                 <p>
-                  Today, Light and Fire Renaissance Commission has metamorphosed into Elyon Life Ministry, a vision with a greater mandate from God, to take the glorious gospel of Jesus Christ to the ends of the earth and transform lives positively through the victorious light of God. 
+                  Today, Light and Fire Renaissance Commission has metamorphosed into Elyon Life Ministry, a vision with a greater mandate from God, to take the glorious gospel of Jesus Christ to the ends of the earth and transform lives positively through the victorious light of God.
                 </p>
                 <p>
-                 Welcome to Elyon Life Ministry, a place where God lives, a place where the Spirit of God reigns, a place of Power and divine authority, a place of favour, grace and blessings, a place where God's love takes centre stage, and a place of God's light, where darkness is annihilated and the peace of God is enthroned in every aspect of our lives.
+                  Welcome to Elyon Life Ministry, a place where God lives, a place where the Spirit of God reigns, a place of Power and divine authority, a place of favour, grace and blessings, a place where God's love takes centre stage, and a place of God's light, where darkness is annihilated and the peace of God is enthroned in every aspect of our lives.
                 </p>
               </div>
             </div>
-            <div className="space-y-4">
-              <div className="bg-black rounded-lg overflow-hidden h-48">
-                <Image
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Ministry gathering"
-                  width={400}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="bg-black rounded-lg overflow-hidden h-48">
-                <Image
-                  src="/placeholder.svg?height=200&width=400"
-                  alt="Worship service"
-                  width={400}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            {/* About Carousel Section */}
+            <div className="w-full max-w-5xl mx-auto py-8">
+              <AboutCarousel className="h-[320px] md:h-[657px]" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Come Experience Section */}
-      <section className="py-16 md:py-24 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-[#CFA83C] text-sm font-semibold uppercase tracking-wide mb-4">Come Visit Us</div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-12">Come Experience Elyon Life Ministry</h2>
+      <section className="py-5 md:py-10 text-center">
+        <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`${dmSans.className}text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-4 md:mb-6`}>locate us</div>
+          <h2 className={`${merriweather.className} font-bold text-2xl md:text-[44px] text-[#1A1A1A] mb-12`}>Come Experience <br />Elyon Life Ministry</h2>
 
           <div className="rounded-lg overflow-hidden mb-12">
             <Image
-              src="/placeholder.svg?height=400&width=800"
-              alt="City view"
+              src="/images/about/church.png"
+              alt="Aerial view of Elyon Life Ministry building"
               width={800}
               height={400}
               className="w-full h-full object-cover"
@@ -144,15 +123,25 @@ export default function AboutPage() {
       </section>
 
       {/* Need Help Finding Us */}
-      <section className="py-16 bg-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Need help finding us?</h2>
-          <p className="text-center text-[#1A1A1A] mb-12">
-            Use the map to find your way. We'd love to welcome you when you arrive!
-          </p>
+      <section className="py-5 bg-[#F5F5F5]">
+        <div className="max-w-[1120px] flex flex-col md:flex-row md:justify-between md:items-center mx-auto px-4 lg:px-0">
+          <div className="max-w-[472px]">
+            <div className={`${dmSans.className}text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-4 md:mb-6`}>get directions</div>
+            <h2 className={`${merriweather.className} text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-3 md:mb-5`}>Need help finding us?</h2>
+            <p className={`${dmSans.className} font-medium text-sm md:text-base text-[#3C4A5A] mb-12`}>
+              Use the map to find your way. We'd love to welcome you when you arrive!
+            </p>
+          </div>
 
-          <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-            <p className="text-gray-500">Map placeholder - 19 Ikot Anyang Offot, Uyo, Akwa Ibom - Nigeria</p>
+          <div className="w-full md:w-[605px] h-[280px] md:h-[464px] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3974.2983501567373!2d7.95502507368158!3d5.055305338484146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMDMnMTkuMSJOIDfCsDU3JzI3LjQiRQ!5e0!3m2!1sen!2sng!4v1751973377559!5m2!1sen!2sng"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Elyon Life Ministries"
+            ></iframe>
           </div>
         </div>
       </section>

@@ -61,7 +61,7 @@ export default function Footer() {
               <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>19 Ikot Anyang Offot,</p>
               <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>Uyo, Akwa Ibom - Nigeria</p>
             </div>
-            <div className="absolute -bottom-12 flex space-x-4">
+            <div className="absolute -bottom-14 flex space-x-4">
               <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
               <FaXTwitter className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
               <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />

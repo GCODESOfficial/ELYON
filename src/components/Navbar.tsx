@@ -3,16 +3,18 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X, Facebook, MessageCircle } from "lucide-react"
-
+import { Menu, X } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa";
+import { CgFacebook } from "react-icons/cg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#060606] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1120px] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+          <div className="flex gap-10 justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="relative w-8 h-8 md:w-10 md:h-10">
@@ -45,11 +47,12 @@ export default function Navbar() {
               Contact
             </Link>
           </div>
+          </div>
 
           {/* Social Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Facebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
-            <MessageCircle className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
+          <div className="hidden md:flex items-center space-x-4 border border-[#292929] rounded-full px-4 py-2">
+            <CgFacebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
+            <FaWhatsapp className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
           </div>
 
           {/* Mobile menu button */}
@@ -60,23 +63,29 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-[#0D1B2A]">
-              <Link href="/" className="block px-3 py-2 hover:text-[#CFA83C]">
+          <div className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-40 bg-[#060606] flex flex-col justify-between">
+            <div className="flex-1 flex flex-col mt-5 space-y-6">
+              <Link href="/" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
                 Home
               </Link>
-              <Link href="/about" className="block px-3 py-2 hover:text-[#CFA83C]">
+              <Link href="/about" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
                 About us
               </Link>
-              <Link href="/events" className="block px-3 py-2 hover:text-[#CFA83C]">
+              <Link href="/events" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
                 Events
               </Link>
-              <Link href="/give" className="block px-3 py-2 text-[#CFA83C]">
+              <Link href="/give" className="block px-3 py-2 text-[#CFA83C] text-center">
                 Give
               </Link>
-              <Link href="/contact" className="block px-3 py-2 hover:text-[#CFA83C]">
+              <Link href="/contact" className="block px-3 py-2 hover:text-[#CFA83C] text-center">
                 Contact
               </Link>
+            </div>
+            <div className="flex justify-center pb-8">
+              <div className="flex items-center space-x-4 border border-[#292929] rounded-full px-4 py-2">
+                <CgFacebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
+                <FaWhatsapp className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
+              </div>
             </div>
           </div>
         )}

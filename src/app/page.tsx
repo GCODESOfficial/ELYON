@@ -99,47 +99,59 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[936px] mx-auto">
             {/* Card 1: Sunday Worship Service */}
-            <div className="relative group w-full">
+            <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/worship.png"
                 alt="Sunday Worship Service"
                 width={400}
                 height={300}
-                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
-                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>
-                  Sunday <br />
-                  Worship Service
-                </span>
+              {/* Backdrop on hover */}
+              <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
+              {/* Main text */}
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
+                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Sunday <br />Worship Service</span>
+              </div>
+              {/* Hover text */}
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
+                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br/>1st Service: 6:30am<br/>2nd Service: 8:00am</span>
               </div>
             </div>
 
             {/* Card 2: Healing and Deliverance Service */}
-            <div className="relative overflow-hidden shadow-lg group">
+            <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/healing.png"
                 alt="Healing and Deliverance Service"
                 width={400}
                 height={300}
-                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
+              <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
                 <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Healing and <br />Deliverance Service</span>
+              </div>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
+                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br/>Every Tuesday: 8:30am</span>
               </div>
             </div>
 
-            {/* div 3: Communion Service */}
-            <div className="relative overflow-hidden shadow-lg group">
+            {/* Card 3: Communion Service */}
+            <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
                 src="/images/communion.png"
                 alt="Communion Service"
                 width={400}
                 height={300}
-                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px]"
+                className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px]">
+              <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
                 <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Communion <br />Service</span>
+              </div>
+              <div className="absolute bottom-0 w-full py-4 flex justify-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
+                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br/>Every Friday: 6:30am</span>
               </div>
             </div>
           </div>

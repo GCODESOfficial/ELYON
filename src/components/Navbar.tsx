@@ -64,10 +64,10 @@ export default function Navbar() {
             }>
               Give
             </Link>
-            <Link href="/contact" className={
-              `hover:text-[#CFA83C] transition-colors${pathname === "/contact" ? " text-[#CFA83C]" : ""}`
+            <Link href="/sermons" className={
+              `hover:text-[#CFA83C] transition-colors${pathname === "/sermons" ? " text-[#CFA83C]" : ""}`
             }>
-              Contact
+              Sermons
             </Link>
           </div>
           </div>
@@ -100,8 +100,8 @@ export default function Navbar() {
               <Link href="/give" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/give" ? " text-[#CFA83C]" : ""}`} onClick={() => setIsOpen(false)}>
                 Give
               </Link>
-              <Link href="/contact" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/contact" ? " text-[#CFA83C]" : ""}`} onClick={() => setIsOpen(false)}>
-                Contact
+              <Link href="/sermons" className={`block px-3 py-2 hover:text-[#CFA83C] text-center${pathname === "/sermons" ? " text-[#CFA83C]" : ""}`} onClick={() => setIsOpen(false)}>
+                Sermons
               </Link>
             </div>
             <div className="flex justify-center pb-8">

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa";
 import { CgFacebook } from "react-icons/cg";
@@ -11,6 +11,17 @@ import { usePathname } from "next/navigation"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#060606] text-white">

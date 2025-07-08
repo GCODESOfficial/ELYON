@@ -36,39 +36,39 @@ export default function MemoriesGallery() {
       {/* Mobile: Custom 3-column vertical gallery for new images only */}
       <div className="grid grid-cols-3 gap-3 md:hidden">
         {/* First column */}
-        <div className="flex flex-col gap-3">
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-1.png" alt="Memory m-1" width={400} height={600} className="w-full h-full object-cover" />
+        <div className="flex flex-col">
+          <div className="relative aspect-[2/3] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-1.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-2.png" alt="Memory m-2" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[2/4] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-2.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-3.png" alt="Memory m-3" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[1/1] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-3.png" alt="Memories" fill className=" object-contain" />
           </div>
         </div>
         {/* Second column */}
-        <div className="flex flex-col gap-3">
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-4.png" alt="Memory m-4" width={400} height={600} className="w-full h-full object-cover" />
+        <div className="flex flex-col mt-[2px]">
+          <div className="relative aspect-[1/1] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-4.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-5.png" alt="Memory m-5" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[2/4] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-5.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-6.png" alt="Memory m-6" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[2/3] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-6.png" alt="Memories" fill className=" object-contain" />
           </div>
         </div>
         {/* Third column */}
-        <div className="flex flex-col gap-3">
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-7.png" alt="Memory m-7" width={400} height={600} className="w-full h-full object-cover" />
+        <div className="flex flex-col -mt-2">
+          <div className="relative aspect-[2/4] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-7.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-8.png" alt="Memory m-8" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[2/3] mb-2 w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-8.png" alt="Memories" fill className=" object-contain" />
           </div>
-          <div className="aspect-[2/3] bg-black rounded-lg overflow-hidden">
-            <Image src="/images/memories/memories-m-9.png" alt="Memory m-9" width={400} height={600} className="w-full h-full object-cover" />
+          <div className="relative aspect-[1/1] w-full overflow-hidden">
+            <Image src="/images/memories/memories-m-9.png" alt="Memories" fill className=" object-contain" />
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import { MessageCircle, Twitter, Facebook, Instagram } from "lucide-react"
-import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import { FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { CgFacebook } from "react-icons/cg";
+import { TbBrandInstagramFilled } from "react-icons/tb";
+import { Merriweather, DM_Sans } from 'next/font/google';
 
 const merriweather = Merriweather({
   subsets: ['latin'],
@@ -17,11 +20,11 @@ const dmSans = DM_Sans({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060606] text-white md:pt-[450px]">
+    <footer className="bg-[#060606] text-white pt-[300px] md:pt-[450px]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row md:justify-between md:items-center">
-           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center mb-6 md:mb-0">
             <div className="relative w-16 h-16 md:w-32 md:h-32">
               <Image
                 src="/images/logo.svg"
@@ -35,8 +38,8 @@ export default function Footer() {
           </Link>
 
           {/* Quick Links */}
-          <div>
-            <h4 className={`font-bold ${dmSans.className} text-sm md:text-lg mb-4`}>Quick Links</h4>
+          <div className="mb-6 md:mb-0">
+            <h4 className={`font-bold ${dmSans.className} text-sm text-[#FFFFFF] md:text-lg mb-4`}>Quick Links</h4>
             <div className="space-y-2">
               <Link href="/" className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] hover:text-[#CFA83C] transition-colors`}>
                 Home
@@ -52,17 +55,17 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="relative">
-            <h4 className={`font-bold ${dmSans.className} text-sm md:text-lg mb-4`}>Contact</h4>
+            <h4 className={`font-bold ${dmSans.className} text-sm text-[#FFFFFF] md:text-lg mb-4`}>Contact</h4>
             <div className="space-y-2 text-sm">
-              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] mb-4`}>+2349012867508, +2348131867503</p>
+              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] md:mb-4`}>+2349012867508, +2348131867503</p>
               <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>19 Ikot Anyang Offot,</p>
               <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>Uyo, Akwa Ibom - Nigeria</p>
             </div>
-            <div className="absolute -bottom-10 flex space-x-4">
-              <MessageCircle className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
-              <Twitter className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
-              <Facebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
-              <Instagram className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
+            <div className="absolute -bottom-12 flex space-x-4">
+              <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              <FaXTwitter className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              <TbBrandInstagramFilled className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
             </div>
           </div>
         </div>

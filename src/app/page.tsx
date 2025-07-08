@@ -198,8 +198,8 @@ export default function HomePage() {
       </section>
 
       {/* See You This Sunday */}
-      <section className="relative py-24 text-white text-center">
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
+      <section className="relative py-40 md:py-24 text-white text-center">
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -207,26 +207,36 @@ export default function HomePage() {
           }}
         ></div>
 
+        {/* Fave Quote */}
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 z-20 w-full flex justify-center pointer-events-none">
+          <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto pt-8">
+            <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mb-4`}>Favourite Quote</div>
+            <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
+              “One moment in God's presence can change everything.”
+            </blockquote>
+          </div>
+        </div>
+
         {/* sunday time card*/}
-        <div className="absolute left-1/2 -translate-x-1/2 translate-y-1/2 -bottom-24 z-20 w-full flex justify-center pointer-events-none">
+        <div className="absolute left-1/2 -translate-x-1/2 translate-y-1/2 -bottom-10 md:-bottom-24 z-20 w-full px-4 flex justify-center pointer-events-none">
           <div className="bg-[#FFFFFF] max-w-[1120px] w-full mx-auto px-4 rounded-xl shadow-lg pointer-events-auto py-10 md:py-20">
             <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
             <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
 
-            {/* <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
+            <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
               <div className="pt-2 px-2 flex justify-between items-center">
-                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
+                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-lg`}>
                   9:30am
                 </div>
               </div>
               <div className="text-white py-4">(GMT +1)</div>
-            </div> */}
+            </div>
             <Link
               href="/contact"
             >
@@ -234,7 +244,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="h-[300px] md:h-[350px]"></div>
+        <div className="h-12 md:h-[350px]"></div>
       </section>
     </div>
   )

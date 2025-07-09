@@ -6,7 +6,6 @@ import { useState } from "react"
 import { Copy, Check } from "lucide-react"
 import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
 import { Button } from "@/components/ui/button";
-import MemoriesGallery from "@/components/MemoriesGallery";
 
 const merriweather = Merriweather({
   subsets: ['latin'],

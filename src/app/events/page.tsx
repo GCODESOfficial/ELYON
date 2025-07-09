@@ -8,6 +8,7 @@ import MemoriesGallery from "@/components/MemoriesGallery";
 import EventsCarousel from "@/components/EventsCarousel";
 import GivingsCarousel from "@/components/GivingsCarousel";
 
+
 const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
 

@@ -5,7 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Merriweather, DM_Sans } from 'next/font/google';
 import MemoriesGallery from "@/components/MemoriesGallery";
-import EventsGalleryCarousel from "@/components/EventsGalleryCarousel";
+import EventsCarousel from "@/components/EventsCarousel";
+import GivingsCarousel from "@/components/GivingsCarousel";
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
@@ -26,17 +27,16 @@ export default function EventsPage() {
       </section>
 
       {/* Moments of Impact Section */}
-      <section className="py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={`text-2xl md:text-[32px] font-bold text-[#1A1A1A] mb-2 ${merriweather.className}`}>Moments of Impact</h2>
+      <section className="py-6 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 md:text-center">
+          <h2 className={`text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-2 ${merriweather.className}`}>Moments of Impact</h2>
           <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className}`}>You shouldn’t have to serve or love alone. Look at past moments.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map(i => (
               <div key={i} className="flex flex-col items-center">
                 <div className="w-full aspect-square rounded-lg overflow-hidden mb-2">
-                  <Image src={`/images/placeholder-${i}.jpg`} alt={`Moment ${i}`} width={300} height={300} className="w-full h-full object-cover" />
+                  <Image src={`/images/sermon-${i}.png`} alt={`Moment ${i}`} width={300} height={300} className="w-full h-full object-cover" />
                 </div>
-                <span className={`text-xs md:text-sm text-[#3C4A5A] ${dmSans.className}`}>Caption {i}</span>
               </div>
             ))}
           </div>
@@ -44,37 +44,30 @@ export default function EventsPage() {
       </section>
 
       {/* Upcoming Events Section */}
-      <section className="py-12 md:py-20">
+      <section className="pt-6 pb-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className={`text-2xl md:text-[32px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className}`}>Upcoming Events</h2>
-          <EventsGalleryCarousel />
+          <EventsCarousel />
         </div>
       </section>
 
       {/* Give from the Heart Section */}
-      <section className="py-12 md:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 items-center">
-          {/* Images */}
-          <div className="flex flex-row md:flex-col gap-4 w-full md:w-1/2">
-            <div className="w-1/3 md:w-full aspect-square rounded-lg overflow-hidden">
-              <Image src="/images/heart-1.jpg" alt="Heart 1" width={300} height={300} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-1/3 md:w-full aspect-square rounded-lg overflow-hidden">
-              <Image src="/images/heart-2.jpg" alt="Heart 2" width={300} height={300} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-1/3 md:w-full aspect-square rounded-lg overflow-hidden">
-              <Image src="/images/heart-3.jpg" alt="Heart 3" width={300} height={300} className="w-full h-full object-cover" />
+      <section className="pt-6 pb-8 md:py-0 bg-white w-full md:max-w-[1120px] mx-auto">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:justify-between items-center">
+          <div className="flex flex-row order-last md:order-first md:flex-col gap-4 w-full md:w-1/2">
+            <div className="w-full max-w-5xl mx-auto">
+              <GivingsCarousel className="h-[320px] md:h-[450px]" />
             </div>
           </div>
-          {/* Text/CTA */}
-          <div className="bg-white rounded-lg p-8 md:p-12 text-center flex-1 shadow-xl">
-            <h2 className={`${merriweather.className} text-xl md:text-[32px] font-bold text-[#1A1A1A] mb-3`}>Give from the Heart</h2>
-            <p className={`${dmSans.className} max-w-[349px] mx-auto font-medium text-[#3C4A5A] text-xs md:text-lg mb-8`}>Every gift makes a difference. Show love, bring a smile to a charity heart, and build lives that make a noticeable impact. Together, we can do more. Thank you!</p>
+          <div className="flex-1">
+            <h1 className={`${dmSans.className} text-xs md:text-base font-bold text-[#3C4A5A] mb-6`}>Giving</h1>
+            <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A] mb-3`}>Give from the Heart</h2>
+            <p className={`${dmSans.className} font-medium text-[#3C4A5A] text-sm md:text-xl mb-8`}>Every gift makes a difference. <br />Show love, bring a smile to a charity heart, and build lives that make a noticeable impact. Together, we can do more. Thank you!</p>
             <Button className="bg-[#C83737] text-white px-8 py-3 rounded-full font-medium text-sm md:text-lg cursor-pointer hover:bg-[#C83737]/90 transition-colors">Donate</Button>
           </div>
         </div>
       </section>
-
+      
       {/* Memories Gallery */}
       <section className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Elyon Life Ministry",
     description:
       "A place to worship, grow, and experience God's transforming love in community.",
-    url: "https://www.elyonlifeministry.org",
+    url: "https://www.elyonlifeministry.org/images/hero-desktop.png",
     siteName: "Elyon Life Ministry",
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Elyon Life Ministry",
     description:
       "A place to worship, grow, and experience God's transforming love in community.",
-    images: ["/images/hero-desktop.png"],
+    images: ["https://www.elyonlifeministry.org/images/hero-desktop.png"],
     site: "@elyonlifeministry",
     creator: "@elyonlifeministry",
   },

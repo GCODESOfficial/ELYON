@@ -44,7 +44,7 @@ export default function EventsPage() {
       </section>
 
       {/* Upcoming Events Section */}
-      <section className="pt-6 pb-12 md:py-20">
+      <section className="pt-6 pb-12 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className={`text-2xl md:text-[32px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className}`}>Upcoming Events</h2>
           <EventsCarousel />
@@ -53,13 +53,11 @@ export default function EventsPage() {
 
       {/* Give from the Heart Section */}
       <section className="pt-6 pb-8 md:py-0 bg-white w-full md:max-w-[1120px] mx-auto">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:justify-between items-center">
-          <div className="flex flex-row order-last md:order-first md:flex-col gap-4 w-full md:w-1/2">
-            <div className="w-full max-w-5xl mx-auto">
-              <GivingsCarousel className="h-[320px] md:h-[450px]" />
-            </div>
+        <div className="px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 md:items-center md:gap-0">
+          <div className="order-last md:order-first w-full max-w-[400px]">
+            <GivingsCarousel className="h-[320px] md:h-[450px]" />
           </div>
-          <div className="flex-1">
+          <div className="mb-8 md:mb-0 flex-1 md:max-w-[500px] md:mx-auto">
             <h1 className={`${dmSans.className} text-xs md:text-base font-bold text-[#3C4A5A] mb-6`}>Giving</h1>
             <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A] mb-3`}>Give from the Heart</h2>
             <p className={`${dmSans.className} font-medium text-[#3C4A5A] text-sm md:text-xl mb-8`}>Every gift makes a difference. <br />Show love, bring a smile to a charity heart, and build lives that make a noticeable impact. Together, we can do more. Thank you!</p>
@@ -67,7 +65,7 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Memories Gallery */}
       <section className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Merriweather, DM_Sans } from 'next/font/google';
-import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { CgFacebook } from "react-icons/cg";
+import { TbBrandInstagramFilled } from "react-icons/tb";
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
@@ -18,20 +21,13 @@ const relatedTeachings = Array.from({ length: 9 }).map((_, i) => ({
 export default function SermonsPage() {
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
-      {/* Hero Section */}
-      <section className="relative h-64 md:h-[440px] flex items-center justify-center text-white">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/images/placeholder-hero.jpg')` }}
-        ></div>
-        <div className="relative z-20 flex flex-col items-center justify-center w-full text-center">
+      {/* Hero and Featured Sermon Video */}
+      <section className="py-10 md:py-20 bg-[#060606] text-white text-center">
+        <div className="mt-16 mb-10 md:my-20 flex flex-col items-center justify-center w-full text-center">
+          <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-base font-medium mb-2`}>TITLE</h1>
           <h1 className={`${merriweather.className} text-2xl md:text-4xl font-bold mb-2`}>“His Grace is Sufficient”</h1>
+          <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-lg font-medium mb-2`}>20th June, 2025</h1>
         </div>
-      </section>
-
-      {/* Featured Sermon Video */}
-      <section className="py-10 md:py-20 bg-[#111] text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <div className="rounded-xl overflow-hidden mb-6 aspect-video bg-black flex items-center justify-center">
             {/* Placeholder image or YouTube embed */}
@@ -39,10 +35,12 @@ export default function SermonsPage() {
             {/* Or use iframe: */}
             {/* <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" className="w-full h-full" allowFullScreen title="Featured Sermon"></iframe> */}
           </div>
-          <div className={`${dmSans.className} text-lg md:text-2xl mb-4`}>Featured Sermon: The Power of Grace</div>
+          <div className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-base mb-4`}>Share this sermon</div>
           <div className="flex justify-center gap-4 text-2xl">
-            <a href="#" aria-label="Facebook" className="hover:text-[#CFA83C]"><FaFacebook /></a>
-            <a href="#" aria-label="Whatsapp" className="hover:text-[#CFA83C]"><FaWhatsapp /></a>
+            <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+            <FaXTwitter className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+            <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+            <TbBrandInstagramFilled className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
           </div>
         </div>
       </section>

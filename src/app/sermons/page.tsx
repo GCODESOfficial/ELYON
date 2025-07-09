@@ -14,8 +14,7 @@ const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
 
 const relatedTeachings = Array.from({ length: 9 }).map((_, i) => ({
   img: `/images/video-${(i % 3) + 1}.jpg`,
-  title: "God’s Grace in Fullness",
-  speaker: "Pastor John Doe"
+  title: "God’s Grace is Sufficient",
 }));
 
 export default function SermonsPage() {
@@ -47,16 +46,40 @@ export default function SermonsPage() {
 
       {/* Related Teachings Section */}
       <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className={`text-2xl md:text-[32px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className}`}>Related Teachings</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {relatedTeachings.map((t, i) => (
-              <div key={i} className="bg-[#181818] rounded-xl overflow-hidden shadow text-white flex flex-col items-center p-4">
-                <div className="w-full aspect-video rounded-lg overflow-hidden mb-4">
-                  <Image src={t.img} alt={t.title} width={400} height={225} className="w-full h-full object-cover" />
+        <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`text-xs md:text-base uppercase font-medium text-[#3C4A5A] mb-1 ${dmSans.className} text-center`}>
+            You Might Also Like
+          </h2>
+          <h2 className={`text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className} text-center`}>
+            Related Teachings
+          </h2>
+
+          {/* Grid: 1 col on xs, 2 on sm, 4 on md+ */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            {relatedTeachings.slice(0, 8).map((t, i) => (
+              <div key={i} className="flex flex-col items-center">
+                {/* Video Card */}
+                <div className="bg-[#181818] rounded-xl overflow-hidden shadow w-full">
+                  <div className="aspect-video w-full overflow-hidden">
+                    <Image
+                      src={t.img}
+                      alt={t.title}
+                      width={400}
+                      height={225}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <div className={`${dmSans.className} text-base md:text-lg font-semibold mb-1`}>{t.title}</div>
-                <div className="text-xs md:text-sm text-[#CFA83C]">{t.speaker}</div>
+
+                {/* Title & Date below the card */}
+                <div className="mt-2">
+                  <div className={`${dmSans.className} text-[#1A1A1A] text-xs md:text-lg font-semibold mb-1`}>
+                    {t.title}
+                  </div>
+                  <div className={`${dmSans.className} font-medium text-[10px] md:text-sm text-[#3C4A5A]`}>
+                    20th June, 2025
+                  </div>
+                </div>
               </div>
             ))}
           </div>

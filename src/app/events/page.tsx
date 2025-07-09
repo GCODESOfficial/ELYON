@@ -18,7 +18,7 @@ export default function EventsPage() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/images/placeholder-hero.jpg')` }}
+          style={{ backgroundImage: `url('/images/events-hero.png')` }}
         ></div>
         <div className="absolute z-20 left-0 bottom-0 p-4 md:p-8">
           <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>Events</h1>

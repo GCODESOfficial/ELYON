@@ -39,7 +39,7 @@ function AdminDashboard() {
       {/* Main Content */}
       <div className="md:ml-64 transition-all duration-300 ease-in-out">
         {/* Fixed Header */}
-        <header className="fixed top-0 right-0 left-0 md:left-64 bg-white border-b border-[#3C4A5A] px-6 py-4 z-20 shadow-sm">
+        <header className="fixed top-0 right-0 left-0 md:left-64 bg-white border-b border-slate-100 px-6 py-4 z-20 shadow-sm">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               {/* Mobile Menu Button */}

@@ -45,9 +45,9 @@ export default function AdminSidebar({
   ]
 
   const sidebarContent = (
-    <div className="h-full flex flex-col bg-white border-r border-[#3C4A5A]">
+    <div className="h-full flex flex-col bg-white border-r border-slate-100">
       {/* Logo and Header */}
-      <div className={`p-6 border-b border-[#3C4A5A] ${isCollapsed ? "px-4" : ""}`}>
+      <div className={`p-6 border-b border-slate-100 ${isCollapsed ? "px-4" : ""}`}>
         <div className="flex items-center justify-between">
           <div className={`flex items-center space-x-3 ${isCollapsed ? "justify-center" : ""}`}>
             <div className="w-10 h-10 bg-[#CFA83C] rounded-full flex items-center justify-center flex-shrink-0">
@@ -75,7 +75,7 @@ export default function AdminSidebar({
       <div className="hidden md:block">
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute -right-3 top-20 bg-white border border-[#3C4A5A] rounded-full p-1 hover:bg-[#F5F5F5] transition-colors z-10"
+          className="absolute -right-3 top-20 bg-white border border-slate-100 rounded-full p-1 hover:bg-[#F5F5F5] transition-colors z-10"
         >
           {isCollapsed ? (
             <ChevronRight className="w-4 h-4 text-[#1A1A1A]" />
@@ -120,7 +120,7 @@ export default function AdminSidebar({
       </nav>
 
       {/* User info and logout */}
-      <div className={`p-6 border-t border-[#3C4A5A] ${isCollapsed ? "px-4" : ""}`}>
+      <div className={`p-6 border-t border-slate-100 ${isCollapsed ? "px-4" : ""}`}>
         {!isCollapsed && (
           <div className="mb-4">
             <div className="flex items-center space-x-2 text-[#1A1A1A] mb-2">

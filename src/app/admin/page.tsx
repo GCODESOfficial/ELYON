@@ -6,80 +6,76 @@ import ProtectedRoute from "@/components/admin/protected-route"
 import AdminSidebar from "@/components/admin/admin-sidebar"
 import SermonForm from "@/components/admin/sermon-form"
 import EventsForm from "@/components/admin/events-form"
-import { LogOut, User } from "lucide-react"
+import LiveVideosForm from "@/components/admin/live-videos-form"
+import { Menu, Bell } from "lucide-react"
 
 function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState<"sermons" | "events">("sermons")
-  const { user, logout } = useAuth()
+  const [activeTab, setActiveTab] = useState<"sermons" | "events" | "live">("sermons")
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { user } = useAuth()
 
-  const handleLogout = () => {
-    logout()
-    window.location.href = "/cpanel"
+  const getTabTitle = () => {
+    switch (activeTab) {
+      case "sermons":
+        return "Sermons & Videos"
+      case "events":
+        return "Events & Photos"
+      case "live":
+        return "Live Videos"
+      default:
+        return "Dashboard"
+    }
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5F5] flex">
-      <AdminSidebar activeTab={activeTab} onTabChange={setActiveTab} />
+    <div className="min-h-screen bg-[#F5F5F5]">
+      <AdminSidebar
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
 
-      <div className="flex-1 lg:ml-0">
-        {/* Header */}
-        <header className="bg-white border-b border-[#3C4A5A] px-6 py-4">
+      {/* Main Content */}
+      <div className="md:ml-64 transition-all duration-300 ease-in-out">
+        {/* Fixed Header */}
+        <header className="fixed top-0 right-0 left-0 md:left-64 bg-white border-b border-[#3C4A5A] px-6 py-4 z-20 shadow-sm">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold text-[#0D1B2A]">Welcome, Admin 👋</h1>
-              <p className="text-[#1A1A1A] text-sm">Manage your church content and events</p>
+            <div className="flex items-center space-x-4">
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="md:hidden p-2 hover:bg-[#F5F5F5] rounded-lg transition-colors"
+              >
+                <Menu className="w-5 h-5 text-[#1A1A1A]" />
+              </button>
+
+              <div>
+                <h1 className="text-xl md:text-2xl font-bold text-[#0D1B2A]">{getTabTitle()}</h1>
+                <p className="text-[#1A1A1A] text-sm hidden sm:block">Manage your church content and events</p>
+              </div>
             </div>
 
             <div className="flex items-center space-x-4">
+
+              {/* User Info - Desktop Only */}
               <div className="hidden sm:flex items-center space-x-2 text-[#1A1A1A]">
-                <User className="w-4 h-4" />
-                <span className="text-sm">{user?.email}</span>
+                <div className="w-8 h-8 bg-[#CFA83C]/20 rounded-full flex items-center justify-center">
+                  <span className="text-[#CFA83C] text-xs font-bold">{user?.email?.charAt(0).toUpperCase()}</span>
+                </div>
+                <span className="text-sm font-medium">{user?.email}</span>
               </div>
-              <button
-                onClick={handleLogout}
-                className="flex items-center space-x-2 bg-[#B33A3A] text-white px-4 py-2 rounded-lg hover:bg-[#B33A3A]/90 transition-colors text-sm font-semibold"
-              >
-                <LogOut className="w-4 h-4" />
-                <span className="hidden sm:inline">Logout</span>
-              </button>
             </div>
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="p-6">
+        {/* Main Content Area */}
+        <main className="pt-20 p-6">
           <div className="max-w-6xl mx-auto">
-            {/* Tab Content */}
-            <div className="mb-6">
-              <div className="border-b border-[#3C4A5A] mb-6">
-                <nav className="flex space-x-8">
-                  <button
-                    onClick={() => setActiveTab("sermons")}
-                    className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
-                      activeTab === "sermons"
-                        ? "border-[#CFA83C] text-[#CFA83C]"
-                        : "border-transparent text-[#1A1A1A] hover:text-[#CFA83C] hover:border-[#CFA83C]/50"
-                    }`}
-                  >
-                    Sermons & Videos
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("events")}
-                    className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
-                      activeTab === "events"
-                        ? "border-[#CFA83C] text-[#CFA83C]"
-                        : "border-transparent text-[#1A1A1A] hover:text-[#CFA83C] hover:border-[#CFA83C]/50"
-                    }`}
-                  >
-                    Events & Photos
-                  </button>
-                </nav>
-              </div>
-            </div>
-
             {/* Content based on active tab */}
             {activeTab === "sermons" && <SermonForm />}
             {activeTab === "events" && <EventsForm />}
+            {activeTab === "live" && <LiveVideosForm />}
           </div>
         </main>
       </div>

@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { supabase } from "@/lib/supabaseClient"
 import { Upload, X, Save } from "lucide-react"
 
 export default function EventsForm() {
@@ -15,19 +16,18 @@ export default function EventsForm() {
 
   const [uploadedImages, setUploadedImages] = useState<string[]>([])
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
     if (files) {
-      // Simulate image upload - in real app, you'd upload to server
-      Array.from(files).forEach((file) => {
-        const reader = new FileReader()
-        reader.onload = (e) => {
-          if (e.target?.result) {
-            setUploadedImages((prev) => [...prev, e.target!.result as string])
-          }
+      for (const file of Array.from(files)) {
+        const fileExt = file.name.split('.').pop()
+        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${fileExt}`
+        const { data, error } = await supabase.storage.from('events-images').upload(fileName, file)
+        if (!error) {
+          const url = supabase.storage.from('events-images').getPublicUrl(fileName).data.publicUrl
+          setUploadedImages((prev) => [...prev, url])
         }
-        reader.readAsDataURL(file)
-      })
+      }
     }
   }
 
@@ -35,10 +35,23 @@ export default function EventsForm() {
     setUploadedImages((prev) => prev.filter((_, i) => i !== index))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Saving event:", { ...formData, images: uploadedImages })
-    alert("Event saved successfully! (Demo only)")
+    const eventData = {
+      event_title: formData.eventTitle,
+      event_date: formData.eventDate,
+      description: formData.description,
+      is_visible: formData.isVisible,
+      images: uploadedImages,
+    }
+    const { error } = await supabase.from('events').insert([eventData])
+    if (error) {
+      alert('Error saving event: ' + error.message)
+    } else {
+      alert('Event saved successfully!')
+      setFormData({ eventTitle: '', eventDate: '', description: '', isVisible: true })
+      setUploadedImages([])
+    }
   }
 
   return (

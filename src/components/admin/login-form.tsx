@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
-import { useAuth } from "@/hooks/useAuth"
+import { supabase } from "@/lib/supabaseClient"
 import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
@@ -12,7 +12,6 @@ export default function LoginForm() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
-  const { login } = useAuth()
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -20,14 +19,18 @@ export default function LoginForm() {
     setIsLoading(true)
     setError("")
 
-    const success = login(email, password)
+    const { data, error: supaError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
 
-    if (success) {
-      router.push("/admin")
-    } else {
-      setError("Invalid email or password")
+    if (supaError) {
+      setError(supaError.message)
+      setIsLoading(false)
+      return
     }
 
+    router.push("/admin")
     setIsLoading(false)
   }
 

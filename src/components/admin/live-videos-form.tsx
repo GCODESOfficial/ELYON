@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
+import { supabase } from "@/lib/supabaseClient"
 import { Eye, EyeOff, Save, Radio, Play, Users } from "lucide-react"
 
 export default function LiveVideosForm() {
@@ -32,10 +33,23 @@ export default function LiveVideosForm() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Saving live video:", formData)
-    alert("Live video saved successfully! (Demo only)")
+    const liveVideoData = {
+      youtube_url: formData.youtubeUrl,
+      title: formData.title,
+      description: formData.description,
+      is_live: formData.isLive,
+      scheduled_time: formData.scheduledTime || null,
+      is_visible: formData.isVisible,
+    }
+    const { error } = await supabase.from('live_videos').insert([liveVideoData])
+    if (error) {
+      alert('Error saving live video: ' + error.message)
+    } else {
+      alert('Live video saved successfully!')
+      setFormData({ youtubeUrl: '', title: '', description: '', isLive: false, scheduledTime: '', isVisible: true })
+    }
   }
 
   return (

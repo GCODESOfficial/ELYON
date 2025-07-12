@@ -8,7 +8,7 @@ import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
 import { toast } from "sonner"
 import MomentsForm from "@/components/admin/moments-form"
 
-export default function AdminSermonsPage() {
+export default function AdminMomentsPage() {
   const [moments, setMoments] = useState<{ id: string; images: string[] }[]>([])
   const [loading, setLoading] = useState(true)
   const [open, setOpen] = useState(false)

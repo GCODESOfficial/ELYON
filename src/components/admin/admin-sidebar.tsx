@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { Video, Calendar, Radio, X, LogOut, ChevronLeft, ChevronRight } from "lucide-react"
+import { Video, Calendar, Camera, Radio, X, LogOut, ChevronLeft, ChevronRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 
@@ -49,7 +49,7 @@ export default function AdminSidebar({
   const tabs = [
     { id: "sermons", label: "Sermons", icon: Video, description: "Manage video content", href: "/admin/sermons" },
     { id: "events", label: "Events", icon: Calendar, description: "Manage event photos", href: "/admin/events" },
-    { id: "moments", label: "Moments", icon: Calendar, description: "Manage favorite moments photos", href: "/admin/moments" },
+    { id: "moments", label: "Moments", icon: Camera, description: "Manage favorite moments photos", href: "/admin/moments" },
     { id: "live", label: "Live Videos", icon: Radio, description: "Manage live streams", href: "/admin/live-videos" },
   ]
 

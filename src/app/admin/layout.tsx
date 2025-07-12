@@ -17,6 +17,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   } else if (pathname.includes("events")) {
     pageTitle = "Event Images"
     pageDesc = "Manage event photos"
+  } else if (pathname.includes("moments")) {
+    pageTitle = "Moments"
+    pageDesc = "Manage favorite moments"
   } else if (pathname.includes("live-videos")) {
     pageTitle = "Live Videos"
     pageDesc = "Manage live streams"
@@ -31,6 +34,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             ? "sermons"
             : pathname.includes("events")
             ? "events"
+            : pathname.includes("moments")
+            ? "moments"
             : "live"
         }
         isMobileMenuOpen={isMobileMenuOpen}

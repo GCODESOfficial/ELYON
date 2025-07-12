@@ -1,121 +1,64 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { supabase } from "@/lib/supabaseClient"
-import { Upload, X, Save } from "lucide-react"
+import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
+import { Save } from "lucide-react";
 
 export default function LiveVideosForm() {
-  const [localPreviews, setLocalPreviews] = useState<string[]>([])
-  const [imageFiles, setImageFiles] = useState<File[]>([])
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [user, setUser] = useState<{ id: string; email: string } | null>(null)
+  const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const getSession = async () => {
-      const { data } = await supabase.auth.getSession()
-      const u = data?.session?.user
-      if (u && u.id && u.email) {
-        setUser({ id: u.id, email: u.email ?? "" })
-      } else {
-        setUser(null)
-      }
-    }
-    getSession()
-  }, [])
-
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files
-    if (!files) return
-    const newFiles = Array.from(files)
-    setImageFiles((prev) => [...prev, ...newFiles])
-    setLocalPreviews((prev) => [...prev, ...newFiles.map((file) => URL.createObjectURL(file))])
-  }
-
-  const removeImage = (index: number) => {
-    setImageFiles((prev) => prev.filter((_, i) => i !== index))
-    setLocalPreviews((prev) => prev.filter((_, i) => i !== index))
-  }
+  // Helper to extract YouTube video ID
+  const extractVideoId = (url: string) => {
+    const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!user) {
-      alert("You must be logged in to upload files.")
-      return
+    e.preventDefault();
+    if (!youtubeUrl) {
+      alert("Please enter a YouTube video URL.");
+      return;
     }
-    if (isSubmitting) return
-    setIsSubmitting(true)
-    const uploadedImageUrls: string[] = []
-    for (const file of imageFiles) {
-      const fileExt = file.name.split('.').pop()
-      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${fileExt}`
-      const filePath = `images/${fileName}`
-      const { error } = await supabase.storage.from("live-videos").upload(filePath, file)
-      if (error) {
-        alert("Image upload failed: " + error.message)
-        setIsSubmitting(false)
-        return
-      }
-      const { data } = supabase.storage.from("live-videos").getPublicUrl(filePath)
-      uploadedImageUrls.push(data.publicUrl)
-    }
-    // Store only images in live_videos table
-    const { error } = await supabase.from("live_videos").insert([{ images: uploadedImageUrls }])
-    setIsSubmitting(false)
+    setIsSubmitting(true);
+    // Save the YouTube URL to the live_videos table
+    const { error } = await supabase.from("live_videos").insert([{ youtube_url: youtubeUrl }]);
+    setIsSubmitting(false);
     if (error) {
-      alert("Error saving live video images: " + error.message)
+      alert("Error saving live video: " + error.message);
     } else {
-      alert("Live video images saved successfully!")
-      setImageFiles([])
-      setLocalPreviews([])
+      alert("Live video saved successfully!");
+      setYoutubeUrl("");
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <h3 className="text-xl font-bold text-[#0D1B2A] mb-6">Upload Live Video Images</h3>
+        <h3 className="text-xl font-bold text-[#0D1B2A] mb-6">Add Live Video (YouTube URL)</h3>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">Live Video Photos</label>
-            <div className="border-2 border-dashed border-[#3C4A5A] rounded-lg p-6 text-center hover:border-[#CFA83C]">
-              <input
-                type="file"
-                multiple
-                accept="image/*"
-                onChange={handleImageUpload}
-                className="hidden"
-                id="live-video-image-upload"
-              />
-              <label htmlFor="live-video-image-upload" className="cursor-pointer">
-                <Upload className="w-12 h-12 mx-auto mb-4 text-[#3C4A5A]" />
-                <p className="text-[#1A1A1A] font-semibold mb-2">Upload Live Video Photos</p>
-                <p className="text-sm text-gray-500">Click to select multiple images</p>
-              </label>
-            </div>
+            <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">YouTube Video URL</label>
+            <input
+              type="text"
+              value={youtubeUrl}
+              onChange={e => setYoutubeUrl(e.target.value)}
+              className="w-full px-4 py-3 border border-[#3C4A5A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CFA83C] focus:border-transparent transition-colors"
+              placeholder="https://youtube.com/watch?v=..."
+              required
+            />
           </div>
-          {localPreviews.length > 0 && (
+          {youtubeUrl && extractVideoId(youtubeUrl) && (
             <div>
-              <h4 className="text-sm font-semibold text-[#1A1A1A] mb-3">Image Previews ({localPreviews.length})</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {localPreviews.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <Image
-                      src={image}
-                      alt={`Image ${index + 1}`}
-                      width={400}
-                      height={400}
-                      className="w-full h-24 object-cover rounded-lg border"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => removeImage(index)}
-                      className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                ))}
+              <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">Preview</label>
+              <div className="aspect-video w-full bg-gray-100 rounded-lg flex items-center justify-center">
+                <iframe
+                  src={`https://www.youtube.com/embed/${extractVideoId(youtubeUrl)}`}
+                  className="w-full h-full rounded-lg"
+                  allowFullScreen
+                  title="Live Video Preview"
+                />
               </div>
             </div>
           )}
@@ -126,11 +69,11 @@ export default function LiveVideosForm() {
               className="flex items-center justify-center space-x-2 bg-[#B33A3A] text-white px-6 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold disabled:opacity-50"
             >
               <Save className="w-4 h-4" />
-              <span>{isSubmitting ? "Saving..." : "Save Images"}</span>
+              <span>{isSubmitting ? "Saving..." : "Save Live Video"}</span>
             </button>
           </div>
         </form>
       </div>
     </div>
-  )
+  );
 }

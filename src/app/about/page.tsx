@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import { Merriweather, DM_Sans } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 import MemoriesGallery from "@/components/MemoriesGallery";
 import AboutCarousel from "@/components/AboutCarousel";
@@ -14,11 +14,6 @@ const merriweather = Merriweather({
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['500', '600'],
-});
-
-const greatVibes = Great_Vibes({
-  subsets: ['latin'],
-  weight: ['400'],
 });
 
 
@@ -60,7 +55,7 @@ export default function AboutPage() {
                   Prince Esshiett is a servant of God who has been in the ministry for a couple of years.
                   He spends his time being used by God to minister to people of all works of life irrespective of age, color, or race etc., in order to effect positive changes in their lives by the power of the Holy Ghost.
                   Being one who has dedicated his life solely to the things of God, he believes in the total positive transformation of man by the power of God, and is passionate about touching lives through charitable works like Jesus did.
-                  Apart from being a servant of God, he's also a husband and a father of two. </p>
+                  Apart from being a servant of God, he&apos;s also a husband and a father of two. </p>
               </div>
             </div>
             <div className="">
@@ -87,13 +82,13 @@ export default function AboutPage() {
               <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A]`}>Our Story</h2>
               <div className={`space-y-4 text-sm md:text-lg text-[#3C4A5A] leading-relaxed ${dmSans.className}`}>
                 <p>
-                  A divine movement began in May 2017, geared towards the spiritual emancipation, restoration, and divine awakening of God's people. This movement, also known as Light and Fire Renaissance Commission  (LFRC), was used mightily by God to touch lives, save souls, and liberate God's people from all forms of darkness and spiritual captivity.
+                  A divine movement began in May 2017, geared towards the spiritual emancipation, restoration, and divine awakening of God&apos;s people. This movement, also known as Light and Fire Renaissance Commission  (LFRC), was used mightily by God to touch lives, save souls, and liberate God&apos;s people from all forms of darkness and spiritual captivity.
                 </p>
                 <p>
                   Today, Light and Fire Renaissance Commission has metamorphosed into Elyon Life Ministry, a vision with a greater mandate from God, to take the glorious gospel of Jesus Christ to the ends of the earth and transform lives positively through the victorious light of God.
                 </p>
                 <p>
-                  Welcome to Elyon Life Ministry, a place where God lives, a place where the Spirit of God reigns, a place of Power and divine authority, a place of favour, grace and blessings, a place where God's love takes centre stage, and a place of God's light, where darkness is annihilated and the peace of God is enthroned in every aspect of our lives.
+                  Welcome to Elyon Life Ministry, a place where God lives, a place where the Spirit of God reigns, a place of Power and divine authority, a place of favour, grace and blessings, a place where God&apos;s love takes centre stage, and a place of God&apos;s light, where darkness is annihilated and the peace of God is enthroned in every aspect of our lives.
                 </p>
               </div>
             </div>
@@ -130,7 +125,7 @@ export default function AboutPage() {
             <div className={`${dmSans.className}text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-4 md:mb-6`}>get directions</div>
             <h2 className={`${merriweather.className} text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-3 md:mb-5`}>Need help finding us?</h2>
             <p className={`${dmSans.className} font-medium text-sm md:text-base text-[#3C4A5A] mb-12`}>
-              Use the map to find your way. We'd love to welcome you when you arrive!
+              Use the map to find your way. We&apos;d love to welcome you when you arrive!
             </p>
           </div>
 
@@ -152,11 +147,6 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Memories</h2>
           <MemoriesGallery />
-          <div className="text-center mt-8">
-            <Button className={`${dmSans.className} border border-[#3C4A5A] bg-transparent hover:bg-transparent cursor-pointer text-[#3C4A5A] px-8 py-3 rounded-full`}>
-              View more
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -175,7 +165,7 @@ export default function AboutPage() {
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
             <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
             <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God's presence <br />can change everything.”
+              “One moment in God&apos;s presence <br />can change everything.”
             </blockquote>
           </div>
         </div>

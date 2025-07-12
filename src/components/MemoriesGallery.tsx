@@ -3,16 +3,16 @@
 import Image from "next/image";
 
 const images = [
-  "/images/memories/memories1.png",
-  "/images/memories/memories2.png",
-  "/images/memories/memories3.png",
-  "/images/memories/memories4.png",
-  "/images/memories/memories5.png",
-  "/images/memories/memories6.png",
-  "/images/memories/memories7.png",
-  "/images/memories/memories8.png",
-  "/images/memories/memories9.png",
-  "/images/memories/memories10.png",
+  "/images/memories/memories1.jpg",
+  "/images/memories/memories2.jpg",
+  "/images/memories/memories3.jpg",
+  "/images/memories/memories4.jpg",
+  "/images/memories/memories5.jpg",
+  "/images/memories/memories6.jpg",
+  "/images/memories/memories7.jpg",
+  "/images/memories/memories8.jpg",
+  "/images/memories/memories9.jpg",
+  "/images/memories/memories10.jpg",
 ];
 
 export default function MemoriesGallery() {

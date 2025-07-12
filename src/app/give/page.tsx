@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { Copy, Check } from "lucide-react"
-import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import { Merriweather, DM_Sans } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 
 const merriweather = Merriweather({
@@ -17,10 +17,6 @@ const dmSans = DM_Sans({
   weight: ['500', '600'],
 });
 
-const greatVibes = Great_Vibes({
-  subsets: ['latin'],
-  weight: ['400'],
-});
 
 export default function GivePage() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -124,7 +120,7 @@ export default function GivePage() {
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
             <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
             <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God's presence <br />can change everything.”
+              “One moment in God&apos;s presence <br />can change everything.”
             </blockquote>
           </div>
         </div>

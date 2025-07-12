@@ -115,11 +115,6 @@ export default function EventsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Memories</h2>
           <MemoriesGallery />
-          <div className="text-center mt-8">
-            <Button className={`${dmSans.className} border border-[#3C4A5A] bg-transparent hover:bg-transparent cursor-pointer text-[#3C4A5A] px-8 py-3 rounded-full`}>
-              View more
-            </Button>
-          </div>
         </div>
       </section>
 

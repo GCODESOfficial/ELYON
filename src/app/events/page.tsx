@@ -95,7 +95,7 @@ export default function EventsPage() {
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
             <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
             <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God's presence <br />can change everything.”
+              “One moment in God&apos;s presence <br />can change everything.”
             </blockquote>
           </div>
         </div>

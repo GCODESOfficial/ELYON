@@ -1,21 +1,39 @@
 "use client"
 
-import type React from "react"
-
-import { useAuth } from "@/hooks/useAuth"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+
+import { supabase } from "@/lib/supabaseClient"
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { isAuthenticated, loading } = useAuth()
+  const [loading, setLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
   const router = useRouter()
 
   useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      router.push("/cpanel")
+    const getSession = async () => {
+      const { data } = await supabase.auth.getSession()
+      if (data?.session) {
+        setIsAuthenticated(true)
+      } else {
+        setIsAuthenticated(false)
+      }
+      setLoading(false)
     }
-  }, [isAuthenticated, loading, router])
+    getSession()
+    // Listen for auth state changes
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(!!session)
+      if (!session) {
+        router.push("/cpanel")
+      }
+    })
+    return () => {
+      listener?.subscription.unsubscribe()
+    }
+  }, [router])
 
   if (loading) {
     return (

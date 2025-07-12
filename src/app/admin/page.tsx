@@ -1,18 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { useAuth } from "@/hooks/useAuth"
 import ProtectedRoute from "@/components/admin/protected-route"
 import AdminSidebar from "@/components/admin/admin-sidebar"
 import SermonForm from "@/components/admin/sermon-form"
 import EventsForm from "@/components/admin/events-form"
 import LiveVideosForm from "@/components/admin/live-videos-form"
-import { Menu, Bell } from "lucide-react"
+import { Menu } from "lucide-react"
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<"sermons" | "events" | "live">("sermons")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { user } = useAuth()
 
   const getTabTitle = () => {
     switch (activeTab) {
@@ -53,17 +51,6 @@ function AdminDashboard() {
               <div>
                 <h1 className="text-xl md:text-2xl font-bold text-[#0D1B2A]">{getTabTitle()}</h1>
                 <p className="text-[#1A1A1A] text-sm hidden sm:block">Manage your church content and events</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-
-              {/* User Info - Desktop Only */}
-              <div className="hidden sm:flex items-center space-x-2 text-[#1A1A1A]">
-                <div className="w-8 h-8 bg-[#CFA83C]/20 rounded-full flex items-center justify-center">
-                  <span className="text-[#CFA83C] text-xs font-bold">{user?.email?.charAt(0).toUpperCase()}</span>
-                </div>
-                <span className="text-sm font-medium">{user?.email}</span>
               </div>
             </div>
           </div>

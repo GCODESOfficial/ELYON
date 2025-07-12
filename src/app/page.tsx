@@ -41,7 +41,7 @@ export default function HomePage() {
           <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
           <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${merriweather.className}`}>Elyon Life Ministry</h1>
           <p className={`text-lg md:text-xl max-w-2xl mx-auto mb-8 ${dmSans.className}`}>
-            A place to worship, grow, and experience God's transforming love in community.
+            A place to worship, grow, and experience God&apos;s transforming love in community.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default function HomePage() {
             </div>
             <div className="order-1 md:order-2 space-y-6 flex-1">
               <div className={`text-[#3C4A5A] text-xs md:text-[16px] font-medium uppercase tracking-wide ${dmSans.className}`}>Our Mission</div>
-              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>Sharing God's Love and Changing Lives</h2>
+              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>Sharing God&apos;s Love and Changing Lives</h2>
               <p className={`text-[#1A1A1A] text-sm md:text-xl leading-relaxed ${dmSans.className}`}>
                 Since 2017, God has been the author of our journey as we seek to be ready for His Kingdom. We believe in
                 the power of community, worship, and spiritual growth to transform lives and bring hope to our world.
@@ -82,8 +82,8 @@ export default function HomePage() {
       <section className="pt-16 md:pt-28 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <blockquote className={`text-base md:text-[28px] font-semibold ${dmSans.className}`}>
-            "And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of
-            many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
+            &quot;And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of
+            many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in.&quot;
           </blockquote>
           <cite className={`text-[#C83737] mb-10 md:mb-0 text-sm md:text-2xl font-semibold ${dmSans.className}`}>- Isaiah 58:12 (KJV)</cite>
         </div>
@@ -227,7 +227,7 @@ export default function HomePage() {
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
             <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
             <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God's presence <br />can change everything.”
+              “One moment in God&apos;s presence <br />can change everything.”
             </blockquote>
           </div>
         </div>

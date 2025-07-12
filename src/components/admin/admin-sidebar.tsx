@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Video, Calendar, Radio, X, LogOut, ChevronLeft, ChevronRight } from "lucide-react"
-import { useAuth } from "@/hooks/useAuth"
+import { supabase } from "@/lib/supabaseClient"
 
 interface AdminSidebarProps {
   activeTab: "sermons" | "events" | "live"
@@ -19,7 +19,15 @@ export default function AdminSidebar({
   setIsMobileMenuOpen,
 }: AdminSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false)
-  const { user, logout } = useAuth()
+  const [userEmail, setUserEmail] = useState<string | null>(null)
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data } = await supabase.auth.getUser()
+      setUserEmail(data?.user?.email || null)
+    }
+    getUser()
+  }, [])
 
   // Close mobile menu on route change or outside click
   useEffect(() => {
@@ -33,8 +41,8 @@ export default function AdminSidebar({
     return () => window.removeEventListener("resize", handleResize)
   }, [setIsMobileMenuOpen])
 
-  const handleLogout = () => {
-    logout()
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
     window.location.href = "/cpanel"
   }
 
@@ -125,10 +133,10 @@ export default function AdminSidebar({
           <div className="mb-4">
             <div className="flex items-center space-x-2 text-[#1A1A1A] mb-2">
               <div className="w-8 h-8 bg-[#CFA83C]/20 rounded-full flex items-center justify-center">
-                <span className="text-[#CFA83C] text-xs font-bold">{user?.email?.charAt(0).toUpperCase()}</span>
+                <span className="text-[#CFA83C] text-xs font-bold">{userEmail?.charAt(0).toUpperCase()}</span>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold truncate">{user?.email}</p>
+                <p className="text-sm font-semibold truncate">{userEmail}</p>
                 <p className="text-xs text-gray-500">Administrator</p>
               </div>
             </div>

@@ -8,16 +8,26 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { CgFacebook } from "react-icons/cg";
 import { TbBrandInstagramFilled } from "react-icons/tb";
+import { useEffect, useState } from "react"
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
 
-const relatedTeachings = Array.from({ length: 9 }).map((_, i) => ({
-  img: `/images/video-${(i % 3) + 1}.jpg`,
-  title: "God’s Grace is Sufficient",
-}));
-
 export default function SermonsPage() {
+  const [sermons, setSermons] = useState<{ img?: string; title?: string; date?: string }[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchSermons = async () => {
+      // Example: fetch from 'sermons' table
+      // const { data, error } = await supabase.from('sermons').select('*')
+      // setSermons(data || [])
+      setSermons([]) // Placeholder: no sermons yet
+      setLoading(false)
+    }
+    fetchSermons()
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero and Featured Sermon Video */}
@@ -53,36 +63,37 @@ export default function SermonsPage() {
           <h2 className={`text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className} text-center`}>
             Related Teachings
           </h2>
-
-          {/* Grid: 1 col on xs, 2 on sm, 4 on md+ */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {relatedTeachings.slice(0, 8).map((t, i) => (
-              <div key={i} className="flex flex-col items-center">
-                {/* Video Card */}
-                <div className="bg-[#181818] rounded-xl overflow-hidden shadow w-full">
-                  <div className="aspect-video w-full overflow-hidden">
-                    <Image
-                      src={t.img}
-                      alt={t.title}
-                      width={400}
-                      height={225}
-                      className="w-full h-full object-cover"
-                    />
+          {loading ? null : !sermons.length ? (
+            <div className="w-full text-center py-12 text-xl text-[#CFA83C]">Coming soon</div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              {sermons.slice(0, 8).map((t, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  {/* Video Card */}
+                  <div className="bg-[#181818] rounded-xl overflow-hidden shadow w-full">
+                    <div className="aspect-video w-full overflow-hidden">
+                      <Image
+                        src={t.img || "/images/placeholder-hero.jpg"}
+                        alt={t.title || "Sermon"}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  {/* Title & Date below the card */}
+                  <div className="mt-2">
+                    <div className={`${dmSans.className} text-[#1A1A1A] text-xs md:text-lg font-semibold mb-1`}>
+                      {t.title || "Untitled Sermon"}
+                    </div>
+                    <div className={`${dmSans.className} font-medium text-[10px] md:text-sm text-[#3C4A5A]`}>
+                      {t.date || "Date coming soon"}
+                    </div>
                   </div>
                 </div>
-
-                {/* Title & Date below the card */}
-                <div className="mt-2">
-                  <div className={`${dmSans.className} text-[#1A1A1A] text-xs md:text-lg font-semibold mb-1`}>
-                    {t.title}
-                  </div>
-                  <div className={`${dmSans.className} font-medium text-[10px] md:text-sm text-[#3C4A5A]`}>
-                    20th June, 2025
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -101,7 +112,7 @@ export default function SermonsPage() {
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
             <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
             <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God's presence <br />can change everything.”
+              “One moment in God&apos;s presence <br />can change everything.”
             </blockquote>
           </div>
         </div>

@@ -3,23 +3,23 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Video, Calendar, Radio, X, LogOut, ChevronLeft, ChevronRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 
 interface AdminSidebarProps {
   activeTab: "sermons" | "events" | "live"
-  onTabChange: (tab: "sermons" | "events" | "live") => void
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: (open: boolean) => void
 }
 
 export default function AdminSidebar({
   activeTab,
-  onTabChange,
   isMobileMenuOpen,
   setIsMobileMenuOpen,
 }: AdminSidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [userEmail, setUserEmail] = useState<string | null>(null)
+  const router = useRouter()
 
   useEffect(() => {
     const getUser = async () => {
@@ -47,9 +47,9 @@ export default function AdminSidebar({
   }
 
   const tabs = [
-    { id: "sermons" as const, label: "Sermons", icon: Video, description: "Manage video content" },
-    { id: "events" as const, label: "Events", icon: Calendar, description: "Manage event photos" },
-    { id: "live" as const, label: "Live Videos", icon: Radio, description: "Manage live streams" },
+    { id: "sermons", label: "Sermons", icon: Video, description: "Manage video content", href: "/admin/sermons" },
+    { id: "events", label: "Events", icon: Calendar, description: "Manage event photos", href: "/admin/events" },
+    { id: "live", label: "Live Videos", icon: Radio, description: "Manage live streams", href: "/admin/live-videos" },
   ]
 
   const sidebarContent = (
@@ -100,19 +100,12 @@ export default function AdminSidebar({
           return (
             <button
               key={tab.id}
-              onClick={() => {
-                onTabChange(tab.id)
-                setIsMobileMenuOpen(false)
-              }}
-              className={`
-                w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors group
-                ${
-                  activeTab === tab.id
-                    ? "bg-[#CFA83C]/10 text-[#CFA83C] border border-[#CFA83C]/20"
-                    : "text-[#1A1A1A] hover:bg-[#F5F5F5] hover:text-[#CFA83C]"
-                }
-                ${isCollapsed ? "justify-center px-2" : ""}
-              `}
+              onClick={() => router.push(tab.href)}
+              className={
+                `w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors group ` +
+                (activeTab === tab.id ? "bg-[#CFA83C]/10 text-[#CFA83C] border border-[#CFA83C]/20" : "text-[#1A1A1A] hover:bg-[#F5F5F5] hover:text-[#CFA83C]") +
+                (isCollapsed ? " justify-center px-2" : "")
+              }
               title={isCollapsed ? tab.label : ""}
             >
               <Icon className="w-5 h-5 flex-shrink-0" />

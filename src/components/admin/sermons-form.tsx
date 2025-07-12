@@ -39,6 +39,7 @@ export default function SermonForm() {
       title: formData.title,
       description: formData.description,
       is_visible: formData.isVisible,
+      // Optionally add image upload logic here if needed
     }
     const { error } = await supabase.from('sermons').insert([sermonData])
     if (error) {

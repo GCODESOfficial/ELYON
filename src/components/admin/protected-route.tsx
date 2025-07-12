@@ -16,8 +16,10 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
     const getSession = async () => {
       const { data } = await supabase.auth.getSession()
       if (data?.session) {
+        console.log("User is logged in:", data.session.user)
         setIsAuthenticated(true)
       } else {
+        console.log("User not logged in")
         setIsAuthenticated(false)
       }
       setLoading(false)

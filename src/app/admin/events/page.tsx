@@ -60,9 +60,9 @@ export default function AdminEventsPage() {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg shadow p-4 relative">
+            <div key={event.id} className="bg-white rounded-lg shadow p-4 pb-10 relative">
               <button
-                className="absolute top-2 right-2 text-red-500 hover:bg-red-100 rounded-full p-1"
+                className="absolute bottom-2 right-2 text-red-500 hover:bg-red-100 rounded-full p-1"
                 onClick={() => handleDelete(event.id)}
                 title="Delete"
               >

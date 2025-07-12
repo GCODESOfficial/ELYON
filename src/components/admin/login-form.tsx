@@ -32,7 +32,7 @@ export default function LoginForm() {
     }
 
     setIsLoading(false)
-    router.replace("/admin")
+    router.replace("/admin/sermons")
   }
 
   return (

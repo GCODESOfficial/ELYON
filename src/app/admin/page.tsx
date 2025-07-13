@@ -7,7 +7,7 @@ import AdminSidebar from "@/components/admin/admin-sidebar"
 import SermonForm from "@/components/admin/sermon-form"
 import EventsForm from "@/components/admin/events-form"
 import LiveVideosForm from "@/components/admin/live-videos-form"
-import { Menu, Bell } from "lucide-react"
+import { Menu } from "lucide-react"
 
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<"sermons" | "events" | "live">("sermons")

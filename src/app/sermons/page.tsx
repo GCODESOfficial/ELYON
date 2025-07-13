@@ -70,10 +70,42 @@ export default function SermonsPage() {
           </div>
           <div className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-base mb-4`}>Share this sermon</div>
           <div className="flex justify-center gap-4 text-2xl">
-            <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-            <FaXTwitter className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-            <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-            <TbBrandInstagramFilled className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+            {/* Social Share Buttons */}
+            <FaWhatsapp
+              className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer"
+              onClick={() => {
+                const url = featured?.youtube_url || window.location.href;
+                const text = featured?.title ? `Watch: ${featured.title}` : 'Watch our latest sermon!';
+                window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+              }}
+              title="Share on WhatsApp"
+            />
+            <FaXTwitter
+              className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer"
+              onClick={() => {
+                const url = featured?.youtube_url || window.location.href;
+                const text = featured?.title ? `Watch: ${featured.title}` : 'Watch our latest sermon!';
+                window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+              }}
+              title="Share on Twitter"
+            />
+            <CgFacebook
+              className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer"
+              onClick={() => {
+                const url = featured?.youtube_url || window.location.href;
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+              }}
+              title="Share on Facebook"
+            />
+            <TbBrandInstagramFilled
+              className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer"
+              onClick={() => {
+                const url = featured?.youtube_url || window.location.href;
+                navigator.clipboard.writeText(url);
+                alert('Link copied! Share it on Instagram Stories or Bio.');
+              }}
+              title="Copy link for Instagram"
+            />
           </div>
         </div>
       </section>

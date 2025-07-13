@@ -14,18 +14,16 @@ function EventsCarousel() {
     const fetchEvents = async () => {
       const { data } = await supabase.from("events").select("images");
       if (data && Array.isArray(data)) {
-        // Flatten all images from all events
         const allImages = data.flatMap((event) =>
           Array.isArray(event.images) ? event.images : []
         );
-        setImages(
-          allImages.length ? allImages : ["/images/placeholder-hero.jpg"]
-        );
+        setImages(allImages);
       } else {
-        setImages(["/images/placeholder-hero.jpg"]);
+        setImages([]);
       }
       setLoading(false);
     };
+    
     fetchEvents();
   }, []);
 

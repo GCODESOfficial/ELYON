@@ -4,9 +4,9 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const givingImages = [
-  { src: "/images/events-1.png", alt: "Image 1" },
-  { src: "/images/events-2.png", alt: "Image 2" },
-  { src: "/images/events-3.png", alt: "Image 3" },
+  { src: "/images/memories/memories-m-1.png", alt: "Image 1" },
+  { src: "/images/memories/memories-m-2.png", alt: "Image 2" },
+  { src: "/images/memories/memories-m-8.png", alt: "Image 3" },
 ];
 
 interface GivingsCarouselProps {

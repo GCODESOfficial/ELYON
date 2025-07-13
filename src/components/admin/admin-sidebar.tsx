@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import { supabase } from "@/lib/supabaseClient"
 
 interface AdminSidebarProps {
-  activeTab: "sermons" | "events" | "live"
+  activeTab: "sermons" | "events" | "live" | "moments"
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: (open: boolean) => void
 }

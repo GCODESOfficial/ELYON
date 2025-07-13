@@ -46,7 +46,7 @@ export default function AdminMomentsPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-[#0D1B2A]">Moments Videos</h2>
+        <h2 className="text-2xl font-bold text-[#0D1B2A]">Moments</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <button className="flex items-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">

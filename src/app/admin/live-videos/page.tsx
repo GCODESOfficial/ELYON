@@ -6,7 +6,7 @@ import { supabase } from "@/lib/supabaseClient"
 import { Trash2, Plus } from "lucide-react"
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
 import { toast } from "sonner"
-import SermonsForm from "@/components/admin/sermons-form"
+import VideoForm from "@/components/admin/video-form"
 
 export default function AdminSermonsPage() {
   const [sermons, setSermons] = useState<{ id: string; images: string[] }[]>([])
@@ -41,22 +41,22 @@ export default function AdminSermonsPage() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-[#0D1B2A]">Sermon Videos</h2>
+        <h2 className="text-2xl font-bold text-[#0D1B2A]">Live Videos</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <button className="flex items-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
-              <Plus className="w-4 h-4" /> Add Videos
+              <Plus className="w-4 h-4" /> Add Live Video
             </button>
           </DialogTrigger>
           <DialogContent>
-            <SermonsForm />
+            <VideoForm />
           </DialogContent>
         </Dialog>
       </div>
       {loading ? (
         <div className="text-center py-12 text-[#CFA83C]">Loading...</div>
       ) : sermons.length === 0 ? (
-        <div className="text-center py-12 text-[#CFA83C]">No sermon images found.</div>
+        <div className="text-center py-12 text-[#CFA83C]">No videos found.</div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {sermons.map((sermon) => (

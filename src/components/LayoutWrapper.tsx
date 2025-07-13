@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { AuthProvider } from "@/hooks/useAuth"
+
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
@@ -12,7 +12,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     return (
         <>
             {!hideLayout && <Navbar />}
-            <AuthProvider>{children}</AuthProvider>
+            {children}
             {!hideLayout && <Footer />}
         </>
     );

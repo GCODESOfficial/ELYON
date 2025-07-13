@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { supabase } from "@/lib/supabaseClient"
 import { Eye, EyeOff, Save, Play } from "lucide-react"
 
 export default function SermonForm() {
@@ -31,11 +32,22 @@ export default function SermonForm() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Placeholder for save functionality
-    console.log("Saving sermon:", formData)
-    alert("Sermon saved successfully! (Demo only)")
+    const sermonData = {
+      youtube_url: formData.youtubeUrl,
+      title: formData.title,
+      description: formData.description,
+      is_visible: formData.isVisible,
+      // Optionally add image upload logic here if needed
+    }
+    const { error } = await supabase.from('sermons').insert([sermonData])
+    if (error) {
+      alert('Error saving sermon: ' + error.message)
+    } else {
+      alert('Sermon saved successfully!')
+      setFormData({ youtubeUrl: '', title: '', description: '', isVisible: true })
+    }
   }
 
   return (

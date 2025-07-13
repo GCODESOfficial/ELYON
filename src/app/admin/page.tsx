@@ -84,9 +84,5 @@ function AdminDashboard() {
 }
 
 export default function AdminPage() {
-  return (
-    <ProtectedRoute>
-      <AdminDashboard />
-    </ProtectedRoute>
-  )
+  return null
 }

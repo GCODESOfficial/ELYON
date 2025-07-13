@@ -49,7 +49,7 @@ export default function SermonsPage() {
             {featured?.title || "Featured Sermon"}
           </h1>
           <h1 className={`${merriweather.className} text-2xl md:text-4xl font-bold mb-2`}>
-            {featured?.title ? `“${featured.title}”` : "No Live Video"}
+            {featured?.title ? `“${featured.title}”` : "No Live Stream Yet"}
           </h1>
           <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-lg font-medium mb-2`}>
             {featured?.date || ""}
@@ -65,7 +65,7 @@ export default function SermonsPage() {
                 title="Featured Sermon"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-gray-400">No live video</div>
+              <div className="w-full h-full flex items-center justify-center text-gray-400">No live stream yet. Check back on our next service day to watch it live here.</div>
             )}
           </div>
           <div className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-base mb-4`}>Share this sermon</div>

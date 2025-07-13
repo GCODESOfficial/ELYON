@@ -46,10 +46,10 @@ export default function SermonsPage() {
       <section className="py-10 md:py-20 bg-[#060606] text-white text-center">
         <div className="mt-16 mb-10 md:my-20 flex flex-col items-center justify-center w-full text-center">
           <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-base font-medium mb-2`}>
-            {featured?.title || "Featured Sermon"}
+            TITLE
           </h1>
           <h1 className={`${merriweather.className} text-2xl md:text-4xl font-bold mb-2`}>
-            {featured?.title ? `“${featured.title}”` : "No Live Stream Yet"}
+            “{featured?.title ? `${featured.title}` : 'No Live Stream Yet'}”
           </h1>
           <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-lg font-medium mb-2`}>
             {featured?.date || ""}

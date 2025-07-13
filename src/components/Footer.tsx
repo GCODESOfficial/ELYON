@@ -51,6 +51,9 @@ export default function Footer() {
               <Link href="/give" className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] hover:text-[#CFA83C] transition-colors`}>
                 Give
               </Link>
+              <Link href="/sermons" className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] hover:text-[#CFA83C] transition-colors`}>
+                Sermons
+              </Link>
             </div>
           </div>
 

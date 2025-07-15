@@ -15,12 +15,20 @@ const greatVibes = Great_Vibes({
 
 const testimonials = [
     {
-        text: "I came to Elyon Life Ministry feeling depressed, fearful, and lost. Through the love, worship, and teachings at the church, God healed her, restored her sense of purpose, and empowered her to live in freedom and serve others.",
-        author: "Johnny Wills",
+        text: "Since I joined this commission, God has been really faithful to me and my family. I thank God notably for healing me from severe chest pain in one of the deliverance services with the man of God. I don&apos;t feel any pains anymore. I return all the glory to the God of this commission.",
+        author: "Mrs Maria John Ubuoh",
     },
     {
-        text: "I want to thank the Almighty for using everyone in this ministry to bless my life. The word of God has been a source of strength and encouragement, and I'm grateful for the sense of purpose and empowerment I've found in this community.",
-        author: "Emem James",
+        text: "I thank God for His goodness and faithfulness in my life and family. A few months ago, my sister and I applied for a NELFUND scholarship, and after the man of God at Elyon Life Ministry declared blessings during a service, we began receiving the payments. I&apos;m especially grateful for how God has continued to show up in my academics—glory be to God forever!",
+        author: "Evangelist Lillian Ubuoh",
+    },
+        {
+        text: "Some Sundays ago, I suddenly slumped on my way to church, became unconscious, and was too weak to move. I was rushed to Elyon Life Ministry, where the man of God laid hands on me and ministered in the Name of Jesus. Miraculously, I regained my strength and was able to walk again—may the name of the Lord be praised forever!",
+        author: "Sis. Adehma A.",
+    },
+        {
+        text: "During my son’s internship in Lagos, he fell into the hands of ritualists who enslaved and manipulated him using charms, starving him and extorting money from us. Through fervent prayers and a family deliverance service at Elyon Life Ministry, where he joined online secretly, God miraculously set him free. He later escaped safely and completed his internship with secure accommodation. Praise God! ",
+        author: "Evangelist Beatrice Iyaji",
     },
 ];
 

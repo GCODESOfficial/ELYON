@@ -2,15 +2,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import { FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+// import { FaXTwitter } from "react-icons/fa6";
 import { CgFacebook } from "react-icons/cg";
 import { TbBrandInstagramFilled } from "react-icons/tb";
-import { Merriweather, DM_Sans } from 'next/font/google';
-
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  weight: ['700'],
-});
+import { SiTelegram, SiYoutube } from "react-icons/si"
+import { BiLogoGmail } from "react-icons/bi";
+import { DM_Sans } from 'next/font/google';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -61,15 +58,30 @@ export default function Footer() {
           <div className="relative">
             <h4 className={`font-bold ${dmSans.className} text-sm text-[#FFFFFF] md:text-lg mb-4`}>Contact</h4>
             <div className="space-y-2 text-sm">
-              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] md:mb-4`}>+2349012867508, +2348131867503</p>
-              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>19 Ikot Anyang Offot,</p>
-              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>Uyo, Akwa Ibom - Nigeria</p>
+              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8] md:mb-4`}>+2348038128101, +2348028157170</p>
+              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>4 Ikot Udowot, Shelter Afrique Extension,</p>
+              <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>Oron road, Uyo, Akwa Ibom - Nigeria</p>
             </div>
             <div className="absolute -bottom-14 flex space-x-4">
-              <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-              <FaXTwitter className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-              <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
-              <TbBrandInstagramFilled className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              <Link href="#" target="_blank" title="WhatsApp">
+                <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              </Link>
+
+              <Link href="mailto:elyonlifeministry@gmail.com" title="Gmail">
+                <BiLogoGmail className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              </Link>
+
+              <Link href="https://web.facebook.com/profile.php?id=61552813367120" target="_blank" title="Facebook">
+                <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              </Link>
+
+              <Link href="https://t.me/elyonlifeministry" target="_blank" title="Telegram">
+                <SiTelegram className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              </Link>
+
+              <Link href="https://youtube.com/@elyonlifeministry" target="_blank" title="Youtube">
+                <SiYoutube className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
+              </Link>
             </div>
           </div>
         </div>

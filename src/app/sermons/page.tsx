@@ -26,12 +26,6 @@ export default function SermonsPage() {
   return match ? match[1] : null;
 };
 
-  // const extractVideoId = (url: string) => {
-  //   const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
-  //   const match = url.match(regex);
-  //   return match ? match[1] : null;
-  // };
-
   useEffect(() => {
     const fetchVideos = async () => {
       // Fetch the currently streaming live video (where live_date is today)

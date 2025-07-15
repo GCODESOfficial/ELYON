@@ -190,9 +190,11 @@ export default function HomePage() {
             <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
               <div className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}>Sermons</div>
               <div className={`text-white text-2xl md:text-3xl font-bold mb-6 ${merriweather.className}`}>God’s Word</div>
-              <button className="bg-[#C83737] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#B33A3A] transition-colors w-fit">
-                Watch Now
-              </button>
+              <Link href="/sermons">
+                <button className="bg-[#C83737] text-white cursor-pointer px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#B33A3A] transition-colors w-fit">
+                  Watch Now
+                </button>
+              </Link>
             </div>
           </div>
           <div>

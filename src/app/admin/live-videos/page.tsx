@@ -7,11 +7,11 @@ import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
 import { toast } from "sonner"
 import VideoForm from "@/components/admin/video-form"
 
-function extractVideoId(url: string): string | null {
-  const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
-  const match = url.match(regExp);
+const extractVideoId = (url: string) => {
+  const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/|live\/)|youtu\.be\/)([\w-]{11})/;
+  const match = url.match(regex);
   return match ? match[1] : null;
-}
+};
 
 export default function AdminLiveVideosPage() {
   const [liveVideos, setLiveVideos] = useState<{

@@ -15,10 +15,10 @@ export default function VideoForm() {
   const [previewUrl, setPreviewUrl] = useState("");
 
   const extractVideoId = (url: string) => {
-    const regex = /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/;
-    const match = url.match(regex);
-    return match ? match[1] : null;
-  };
+  const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/|live\/)|youtu\.be\/)([\w-]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+};
 
   const handleUrlChange = (url: string) => {
     setFormData({ ...formData, youtubeUrl: url });
@@ -37,7 +37,7 @@ export default function VideoForm() {
       title: formData.title,
       live_date: formData.live_date,
     };
-    const { error } = await supabase.from("live-videos").insert([liveVideoData]);
+    const { error } = await supabase.from("live_videos").insert([liveVideoData]);
     if (error) {
       alert("Error saving video: " + error.message);
     } else {

@@ -15,21 +15,33 @@ const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
 const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
 
 export default function SermonsPage() {
-  const [featured, setFeatured] = useState<{ id: string; youtube_url: string; title?: string; date?: string } | null>(null);
-  const [sermons, setSermons] = useState<{ id: string; youtube_url: string; title?: string; date?: string }[]>([]);
+  const [featured, setFeatured] = useState<{ id: string; youtube_url: string; title?: string; live_date?: string } | null>(null);
+  const [sermons, setSermons] = useState<{ id: string; youtube_url: string; title?: string; sermon_date?: string }[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Helper to extract YouTube video ID
   const extractVideoId = (url: string) => {
-    const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
-    const match = url.match(regex);
-    return match ? match[1] : null;
-  };
+  const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/|live\/)|youtu\.be\/)([\w-]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+};
+
+  // const extractVideoId = (url: string) => {
+  //   const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+  //   const match = url.match(regex);
+  //   return match ? match[1] : null;
+  // };
 
   useEffect(() => {
     const fetchVideos = async () => {
-      // Fetch the current live video (featured)
-      const { data: liveData } = await supabase.from('live_videos').select('*').order('id', { ascending: false }).limit(1);
+      // Fetch the currently streaming live video (where live_date is today)
+      const today = new Date().toISOString().split('T')[0];
+      const { data: liveData } = await supabase
+        .from('live_videos')
+        .select('*')
+        .eq('live_date', today)
+        .order('id', { ascending: false })
+        .limit(1);
       setFeatured(liveData && liveData.length > 0 ? liveData[0] : null);
 
       // Fetch archived/related sermons
@@ -52,7 +64,7 @@ export default function SermonsPage() {
             “{featured?.title ? `${featured.title}` : 'No Live Stream Yet'}”
           </h1>
           <h1 className={`${dmSans.className} text-[#8E8E8E] text-xs md:text-lg font-medium mb-2`}>
-            {featured?.date || ""}
+            {featured?.live_date || ""}
           </h1>
         </div>
         <div className="max-w-3xl mx-auto px-4">
@@ -146,7 +158,7 @@ export default function SermonsPage() {
                       {t.title || "Untitled Sermon"}
                     </div>
                     <div className={`${dmSans.className} font-medium text-[10px] md:text-sm text-[#3C4A5A]`}>
-                      {t.date || "Date coming soon"}
+                      {t.sermon_date || "Date coming soon"}
                     </div>
                   </div>
                 </div>

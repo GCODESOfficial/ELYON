@@ -9,7 +9,7 @@ export default function VideoForm() {
   const [formData, setFormData] = useState({
     youtubeUrl: "",
     title: "",
-    date: "",
+    live_date: "",
   });
 
   const [previewUrl, setPreviewUrl] = useState("");
@@ -32,20 +32,20 @@ export default function VideoForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const sermonData = {
+    const liveVideoData = {
       youtube_url: formData.youtubeUrl,
       title: formData.title,
-      date: formData.date,
+      live_date: formData.live_date,
     };
-    const { error } = await supabase.from("sermons").insert([sermonData]);
+    const { error } = await supabase.from("live-videos").insert([liveVideoData]);
     if (error) {
-      alert("Error saving sermon: " + error.message);
+      alert("Error saving video: " + error.message);
     } else {
-      alert("Sermon saved successfully!");
+      alert("Video saved successfully!");
       setFormData({
         youtubeUrl: "",
         title: "",
-        date: "",
+        live_date: "",
       });
       setPreviewUrl("");
     }
@@ -87,7 +87,7 @@ export default function VideoForm() {
                     setFormData({ ...formData, title: e.target.value })
                   }
                   className="w-full px-4 py-3 border border-[#3C4A5A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CFA83C] focus:border-transparent transition-colors"
-                  placeholder="Enter sermon title"
+                  placeholder="Enter video title"
                   required
                 />
               </div>
@@ -98,9 +98,9 @@ export default function VideoForm() {
                 </label>
                 <input
                   type="date"
-                  value={formData.date}
+                  value={formData.live_date} // <-- fixed here
                   onChange={(e) =>
-                    setFormData({ ...formData, date: e.target.value })
+                    setFormData({ ...formData, live_date: e.target.value }) // <-- fixed here
                   }
                   className="w-full px-4 py-3 border border-[#3C4A5A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CFA83C] focus:border-transparent transition-colors"
                   required

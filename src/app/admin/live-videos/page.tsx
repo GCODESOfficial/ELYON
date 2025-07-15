@@ -1,15 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
 import { supabase } from "@/lib/supabaseClient"
-import { Trash2, Plus, Archive } from "lucide-react"
+import { Trash2, Archive, Plus } from "lucide-react"
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
 import { toast } from "sonner"
 import VideoForm from "@/components/admin/video-form"
 
 function extractVideoId(url: string): string | null {
-  // Handles various YouTube URL formats
   const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
   const match = url.match(regExp);
   return match ? match[1] : null;
@@ -20,7 +18,7 @@ export default function AdminLiveVideosPage() {
     id: string;
     youtube_url: string;
     title?: string;
-    date?: string;
+    live_date?: string;
   }[]>([])
   const [loading, setLoading] = useState(true)
   const [open, setOpen] = useState(false)
@@ -31,13 +29,12 @@ export default function AdminLiveVideosPage() {
 
   const fetchLiveVideos = async () => {
     setLoading(true)
-    // Only fetch videos where date is today or in the future (still live)
     const today = new Date().toISOString().split("T")[0]
     const { data, error } = await supabase
-      .from("live_videos")
-      .select("id, youtube_url, title, date")
-      .gte("date", today)
-      .order("date", { ascending: true })
+      .from("live-videos")
+      .select("id, youtube_url, title, live_date")
+      .gte("live_date", today)
+      .order("live_date", { ascending: true })
     if (error) {
       toast.error("Failed to fetch live videos")
     } else {
@@ -46,20 +43,20 @@ export default function AdminLiveVideosPage() {
     setLoading(false)
   }
 
-  // Move video to sermons and remove from live_videos
-  const handleArchive = async (video: { id: string; youtube_url: string; title?: string; date?: string }) => {
-    // Insert into sermons
+  // Move video to sermons and remove from live-videos
+  const handleArchive = async (video: { id: string; youtube_url: string; title?: string; live_date?: string }) => {
+    // Insert into sermons (use sermon_date)
     const { error: insertError } = await supabase.from("sermons").insert({
       youtube_url: video.youtube_url,
       title: video.title,
-      date: video.date,
+      sermon_date: video.live_date,
     })
     if (insertError) {
       toast.error("Failed to archive video")
       return
     }
-    // Delete from live_videos
-    const { error: deleteError } = await supabase.from("live_videos").delete().eq("id", video.id)
+    // Delete from live-videos
+    const { error: deleteError } = await supabase.from("live-videos").delete().eq("id", video.id)
     if (deleteError) {
       toast.error("Failed to remove from live videos")
     } else {
@@ -69,7 +66,7 @@ export default function AdminLiveVideosPage() {
   }
 
   const handleDelete = async (id: string) => {
-    const { error } = await supabase.from("live_videos").delete().eq("id", id)
+    const { error } = await supabase.from("live-videos").delete().eq("id", id)
     if (error) {
       toast.error("Delete failed")
     } else {
@@ -109,14 +106,14 @@ export default function AdminLiveVideosPage() {
                 <Trash2 className="w-5 h-5" />
               </button>
               <button
-                className="absolute top-2 left-2 text-blue-500 hover:bg-blue-100 rounded-full p-1"
+                className="absolute top-2 left-2 text-[#CFA83C] hover:bg-yellow-100 rounded-full p-1"
                 onClick={() => handleArchive(video)}
                 title="Archive to Sermons"
               >
                 <Archive className="w-5 h-5" />
               </button>
               <div className="aspect-video w-full mb-2 bg-gray-100 rounded-lg flex items-center justify-center">
-                {video.youtube_url ? (
+                {video.youtube_url && extractVideoId(video.youtube_url) ? (
                   <iframe
                     src={`https://www.youtube.com/embed/${extractVideoId(video.youtube_url)}`}
                     className="w-full h-full rounded-lg"
@@ -130,7 +127,7 @@ export default function AdminLiveVideosPage() {
                 )}
               </div>
               <div className="font-semibold text-[#1A1A1A] mb-1">{video.title || "Untitled Live Video"}</div>
-              <div className="text-xs text-[#3C4A5A] mb-2">{video.date || ""}</div>
+              <div className="text-xs text-[#3C4A5A] mb-2">{video.live_date || ""}</div>
             </div>
           ))}
         </div>

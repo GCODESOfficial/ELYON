@@ -36,7 +36,7 @@ export default function HomePage() {
         {/* Mobile background */}
         <div
           className="absolute inset-0 bg-cover bg-center md:hidden"
-          style={{ backgroundImage: `url('/images/hero-mobile.png')` }}
+          style={{ backgroundImage: `url('/images/hero.png')` }}
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
           <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
@@ -52,13 +52,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="order-2 md:order-1 flex-1">
-              <div className="relative rounded-xl w-full h-full md:max-w-[475px] max-h-[480px]">
+              <div className="relative w-full h-full md:max-w-[475px] max-h-[480px]">
                 <Image
                   src="/images/mission.jpg"
                   alt="Worship service"
                   width={400}
                   height={200}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
             {/* Card 1: Sunday Worship Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/worship.png"
+                src="/images/worship.jpg"
                 alt="Sunday Worship Service"
                 width={400}
                 height={300}
@@ -121,7 +121,7 @@ export default function HomePage() {
             {/* Card 2: Healing and Deliverance Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/healing.png"
+                src="/images/healing.jpg"
                 alt="Healing and Deliverance Service"
                 width={400}
                 height={300}
@@ -140,7 +140,7 @@ export default function HomePage() {
             {/* Card 3: Communion Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/communion.png"
+                src="/images/communion.jpg"
                 alt="Communion Service"
                 width={400}
                 height={300}
@@ -181,7 +181,7 @@ export default function HomePage() {
           <div className="relative group">
             <h1 className={`text-[#3C4A5A] mt-10 md:mt-0 mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}>Hear God’s Word <br />Spoken to Your Heart.</h1>
             <Image
-              src="/images/mission.png"
+              src="/images/mission.jpg"
               alt="Sunday Worship Service"
               width={400}
               height={300}

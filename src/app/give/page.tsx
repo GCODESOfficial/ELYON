@@ -101,10 +101,52 @@ export default function GivePage() {
                   </div>
                 </div>
               </div>
+
+              {/* Zenith Bank */}
+              <div className="bg-[#F5F5F5] rounded-xl p-6">
+                <div className="flex items-center mb-4">
+                  <Image src="/icons/zenith.png" alt="UBA Logo" width={32} height={32} className="w-8 h-8 mr-3" />
+                  <h3 className={`${dmSans.className} text-sm md:text-2xl font-bold text-[#1A1A1A]`}>Zenith Bank</h3>
+                </div>
+                <div className="text-left space-y-2">
+                  <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Prince Inyang Esshiet</p>
+                  <div className="flex items-center justify-between">
+                    <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>2432204975</p>
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432204975")}> 
+                      {copied === "2432204975" ? (
+                        <Check className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <Copy className="w-5 h-5 text-[#1A1A1A]" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Zenith Bank */}
+              <div className="bg-[#F5F5F5] rounded-xl p-6">
+                <div className="flex items-center mb-4">
+                  <Image src="/icons/zenith.png" alt="UBA Logo" width={32} height={32} className="w-8 h-8 mr-3" />
+                  <h3 className={`${dmSans.className} text-sm md:text-2xl font-bold text-[#1A1A1A]`}>Zenith Bank</h3>
+                </div>
+                <div className="text-left space-y-2">
+                  <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Prince Inyang Esshiet</p>
+                  <div className="flex items-center justify-between">
+                    <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>2432205350</p>
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432205350")}> 
+                      {copied === "2432205350" ? (
+                        <Check className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <Copy className="w-5 h-5 text-[#1A1A1A]" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="h-[520px] md:h-[500px]"></div>
+        <div className="h-[920px] md:h-[600px]"></div>
       </section>
 
       {/* See You This Sunday */}

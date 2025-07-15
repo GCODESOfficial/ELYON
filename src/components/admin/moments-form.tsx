@@ -1,75 +1,88 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { supabase } from "@/lib/supabaseClient"
-import { v4 as uuidv4 } from "uuid"
+import { useState } from "react";
+import { supabase } from "@/lib/supabaseClient";
+import { toast } from "sonner";
+import { Save } from "lucide-react";
 
 export default function MomentsForm() {
-  const [videoFile, setVideoFile] = useState<File | null>(null)
-  const [momentDate, setMomentDate] = useState("2025-05-15")
-  const [uploading, setUploading] = useState(false)
+  const [file, setFile] = useState<File | null>(null);
+  const [date, setDate] = useState("");
 
-  const handleUpload = async () => {
-    if (!videoFile) return alert("Please select a video")
+  const handleUpload = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!file || !date) {
+      toast.error("Please select a file and date.");
+      return;
+    }
 
-    setUploading(true)
-
-    const fileExt = videoFile.name.split('.').pop()
-    const fileName = `${uuidv4()}.${fileExt}`
+    const fileExt = file.name.split(".").pop();
+    const fileName = `${Date.now()}.${fileExt}`;
+    const filePath = `${fileName}`;
 
     const { error: uploadError } = await supabase.storage
       .from("moments")
-      .upload(fileName, videoFile, {
-        contentType: "video/mp4",
-      })
+      .upload(filePath, file);
 
     if (uploadError) {
-      alert("Upload failed")
-      console.error(uploadError)
-      setUploading(false)
-      return
+      toast.error("Upload failed.");
+      return;
     }
 
-    const publicUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/moments/${fileName}`
+    const { data: publicURL } = supabase.storage
+      .from("moments")
+      .getPublicUrl(filePath);
 
     const { error: insertError } = await supabase.from("moments").insert([
       {
-        video_url: publicUrl,
-        moment_date: momentDate,
+        video_url: publicURL?.publicUrl,
+        moment_date: date,
+        is_visible: true,
       },
-    ])
+    ]);
 
     if (insertError) {
-      alert("Error saving metadata")
-      console.error(insertError)
+      toast.error("Failed to save moment.");
     } else {
-      alert("Moment uploaded successfully!")
-      setVideoFile(null)
+      toast.success("Moment uploaded!");
+      setFile(null);
+      setDate("");
     }
-
-    setUploading(false)
-  }
+  };
 
   return (
-    <div className="space-y-4">
-      <input
-        type="file"
-        accept="video/mp4"
-        onChange={(e) => setVideoFile(e.target.files?.[0] || null)}
-      />
-      <input
-        type="date"
-        value={momentDate}
-        onChange={(e) => setMomentDate(e.target.value)}
-        className="border p-2"
-      />
+    <form onSubmit={handleUpload} className="space-y-6">
+      <div>
+        <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">
+          Choose Video File
+        </label>
+        <input
+          type="file"
+          accept="video/mp4"
+          onChange={(e) => setFile(e.target.files?.[0] || null)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">
+          Moment Date
+        </label>
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
+        />
+      </div>
+
       <button
-        onClick={handleUpload}
-        disabled={uploading}
-        className="bg-blue-600 text-white px-4 py-2 rounded"
+        type="submit"
+        className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#b89632] transition"
       >
-        {uploading ? "Uploading..." : "Upload Moment"}
+        <Save className="w-4 h-4" />
+        Upload Moment
       </button>
-    </div>
-  )
+    </form>
+  );
 }

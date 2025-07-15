@@ -59,7 +59,7 @@ export default function VideoForm() {
         </h3>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {/* Form Fields */}
             <div className="space-y-6">
               <div>
@@ -98,38 +98,13 @@ export default function VideoForm() {
                 </label>
                 <input
                   type="date"
-                  value={formData.live_date} // <-- fixed here
+                  value={formData.live_date}
                   onChange={(e) =>
-                    setFormData({ ...formData, live_date: e.target.value }) // <-- fixed here
+                    setFormData({ ...formData, live_date: e.target.value })
                   }
                   className="w-full px-4 py-3 border border-[#3C4A5A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#CFA83C] focus:border-transparent transition-colors"
                   required
                 />
-              </div>
-            </div>
-
-            {/* Preview */}
-            <div>
-              <label className="block text-sm font-semibold text-[#1A1A1A] mb-2">
-                Preview
-              </label>
-              <div className="bg-gray-100 rounded-lg p-4 h-64 flex items-center justify-center">
-                {previewUrl ? (
-                  <iframe
-                    src={previewUrl}
-                    className="w-full h-full rounded-lg"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Video Preview"
-                  />
-                ) : (
-                  <div className="text-center text-gray-500">
-                    <Play className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">
-                      Enter a YouTube URL to see preview
-                    </p>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -137,10 +112,10 @@ export default function VideoForm() {
           <div className="flex pt-6 border-t border-[#3C4A5A]">
             <button
               type="submit"
-              className="flex items-center justify-center space-x-2 bg-[#B33A3A] text-white px-6 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold"
+              className="flex items-center cursor-pointer justify-center space-x-2 bg-[#CFA83C] text-white px-6 py-3 rounded-lg hover:bg-[#CFA83C]/90 transition-colors font-semibold"
             >
               <Save className="w-4 h-4" />
-              <span>Save & Publish</span>
+              <span>Save</span>
             </button>
           </div>
         </form>

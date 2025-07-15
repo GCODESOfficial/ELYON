@@ -44,7 +44,7 @@ export default function AdminEventsPage() {
         <h2 className="text-2xl font-bold text-[#0D1B2A]">Event Images</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <button className="flex items-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
+            <button className="flex items-center cursor-pointer gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
               <Plus className="w-4 h-4" /> Add Images
             </button>
           </DialogTrigger>
@@ -60,21 +60,21 @@ export default function AdminEventsPage() {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-lg shadow p-4 pb-10 relative">
-              <button
-                className="absolute bottom-2 right-2 text-red-500 hover:bg-red-100 rounded-full p-1"
-                onClick={() => handleDelete(event.id)}
-                title="Delete"
-              >
-                <Trash2 className="w-5 h-5" />
-              </button>
-              <div className="grid grid-cols-1 gap-2">
+            <div key={event.id} className="bg-white rounded-lg shadow p-4 pb-10 relative flex flex-col">
+              <div className="grid grid-cols-1 gap-2 mb-2">
                 {event.images.map((img, idx) => (
                   <div key={idx} className="relative aspect-square overflow-hidden rounded-lg">
                     <Image src={img} alt={`Event ${idx + 1}`} fill sizes="100vw" className="object-cover" />
                   </div>
                 ))}
               </div>
+              <button
+                className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition mt-2"
+                onClick={() => handleDelete(event.id)}
+                title="Delete"
+              >
+                <Trash2 className="w-4 h-4" /> Delete
+              </button>
             </div>
           ))}
         </div>

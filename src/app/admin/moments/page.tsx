@@ -49,7 +49,7 @@ export default function AdminMomentsPage() {
         <h2 className="text-2xl font-bold text-[#0D1B2A]">Moments</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <button className="flex items-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
+            <button className="flex items-center cursor-pointer gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
               <Plus className="w-4 h-4" /> Add Video
             </button>
           </DialogTrigger>
@@ -66,28 +66,24 @@ export default function AdminMomentsPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {moments.map((moment) => (
-            <div key={moment.id} className="bg-white rounded-lg shadow p-4 relative">
-              <button
-                className="absolute bottom-2 right-2 text-red-500 hover:bg-red-100 rounded-full p-1"
-                onClick={() => handleDelete(moment.id)}
-                title="Delete"
-              >
-                <Trash2 className="w-5 h-5" />
-              </button>
-
+            <div key={moment.id} className="bg-white rounded-lg shadow p-4 relative flex flex-col">
               <div className="aspect-video rounded-lg overflow-hidden mb-2">
                 <video controls className="w-full h-full object-cover">
                   <source src={moment.video_url} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
-
               <p className="text-sm text-gray-500">
                 Date: {new Date(moment.moment_date).toLocaleDateString()}
               </p>
-              <p className="text-sm text-gray-500">
-                Visibility: {moment.is_visible ? "Visible" : "Hidden"}
-              </p>
+              <button
+                className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition mt-2"
+                onClick={() => handleDelete(moment.id)}
+                title="Delete"
+              >
+                <Trash2 className="w-4 h-4" />
+                Delete
+              </button>
             </div>
           ))}
         </div>

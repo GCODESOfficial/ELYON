@@ -27,11 +27,11 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center text-white">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-black/90 z-10"></div>
         {/* Desktop background */}
         <div
           className="absolute inset-0 bg-cover bg-center hidden md:block"
-          style={{ backgroundImage: `url('/images/hero-desktop.png')` }}
+          style={{ backgroundImage: `url('/images/hero.png')` }}
         ></div>
         {/* Mobile background */}
         <div
@@ -52,13 +52,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="order-2 md:order-1 flex-1">
-              <div className="relative rounded-lg">
+              <div className="relative rounded-xl w-full h-full md:max-w-[475px] max-h-[480px]">
                 <Image
-                  src="/images/mission.png"
+                  src="/images/mission.jpg"
                   alt="Worship service"
                   width={400}
                   height={200}
-                  className="w-full h-full object-cover max-w-[475px] max-h-[480px]"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>

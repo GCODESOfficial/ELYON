@@ -7,6 +7,7 @@ import { useState } from "react"
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(false) // sidebar collapsed state
 
   let pageTitle = "Admin Dashboard"
   let pageDesc = "Manage your church content and events"
@@ -25,6 +26,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     pageDesc = "Manage live streams"
   }
 
+  // compute left margin for content area
+  const contentMarginLeft = isCollapsed ? "md:ml-20" : "md:ml-64"
+
   return (
     <div className="min-h-screen bg-[#F5F5F5] flex">
       {/* Sidebar */}
@@ -40,10 +44,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         }
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
       />
 
-      {/* Main content area with margin for sidebar on md+ */}
-      <div className="flex-1 md:ml-64 transition-all">
+      {/* Main Content */}
+      <div
+        className={`flex-1 transition-all duration-300 ease-in-out ${contentMarginLeft}`}
+      >
         {/* Header */}
         <div className="border-b px-6 py-4 flex items-center justify-between bg-white">
           <div>
@@ -51,7 +59,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <p className="text-[#3C4A5A] text-sm">{pageDesc}</p>
           </div>
 
-          {/* Mobile sidebar toggle button */}
+          {/* Mobile toggle */}
           <button
             className="md:hidden flex items-center px-3 py-2 border rounded text-[#0D1B2A] border-[#0D1B2A]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

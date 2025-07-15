@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   Video,
@@ -19,14 +19,17 @@ interface AdminSidebarProps {
   activeTab: "sermons" | "events" | "live" | "moments";
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (open: boolean) => void;
+  isCollapsed: boolean;
+  setIsCollapsed: (collapsed: boolean) => void;
 }
 
 export default function AdminSidebar({
   activeTab,
   isMobileMenuOpen,
   setIsMobileMenuOpen,
+  isCollapsed,
+  setIsCollapsed,
 }: AdminSidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const router = useRouter();
 
@@ -86,7 +89,7 @@ export default function AdminSidebar({
 
   const sidebarContent = (
     <div className="h-full flex flex-col bg-white border-r border-slate-100">
-      {/* Logo Header */}
+      {/* Header */}
       <div className={`p-6 border-b border-slate-100 ${isCollapsed ? "px-4" : ""}`}>
         <div className="flex items-center justify-between">
           <div className={`flex items-center space-x-3 ${isCollapsed ? "justify-center" : ""}`}>
@@ -111,11 +114,11 @@ export default function AdminSidebar({
         </div>
       </div>
 
-      {/* Collapse button */}
+      {/* Collapse toggle */}
       <div className="hidden md:block">
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute -right-3 top-20 bg-white border border-slate-100 rounded-full p-1 hover:bg-[#F5F5F5] transition-colors z-10"
+          className="absolute -right-3 top-20 bg-white cursor-pointer border border-slate-100 rounded-full p-1 hover:bg-[#F5F5F5] transition-colors z-10"
         >
           {isCollapsed ? (
             <ChevronRight className="w-4 h-4 text-[#1A1A1A]" />
@@ -159,7 +162,7 @@ export default function AdminSidebar({
         })}
       </nav>
 
-      {/* User info and logout */}
+      {/* User & logout */}
       <div className={`p-6 border-t border-slate-100 ${isCollapsed ? "px-4" : ""}`}>
         {!isCollapsed && (
           <div className="mb-4">
@@ -179,7 +182,7 @@ export default function AdminSidebar({
 
         <button
           onClick={handleLogout}
-          className={`w-full flex items-center cursor-pointer text-center space-x-2 bg-[#B33A3A] text-white px-4 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold ${
+          className={`w-full flex items-center cursor-pointer space-x-2 bg-[#B33A3A] text-white px-4 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold ${
             isCollapsed ? "justify-center px-2" : ""
           }`}
           title={isCollapsed ? "Logout" : ""}
@@ -195,9 +198,11 @@ export default function AdminSidebar({
     <>
       {/* Desktop Sidebar */}
       <div
-        className={`hidden md:block fixed left-0 top-0 h-full z-30 transition-all duration-300 ease-in-out ${
-          isCollapsed ? "w-20" : "w-64"
-        }`}
+        className={`
+          hidden md:block fixed left-0 top-0 h-full z-30
+          transition-all duration-300 ease-in-out
+          ${isCollapsed ? "w-20" : "w-64"}
+        `}
       >
         {sidebarContent}
       </div>

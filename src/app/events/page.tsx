@@ -41,10 +41,10 @@ export default function EventsPage() {
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="relative h-64 md:h-[440px] flex items-center justify-center text-white">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/images/events-hero.png')` }}
+          style={{ backgroundImage: `url('/images/events-hero.jpg')` }}
         ></div>
         <div className="absolute z-20 left-0 bottom-0 p-4 md:p-8">
           <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>Events</h1>
@@ -121,7 +121,7 @@ export default function EventsPage() {
 
       {/* See You This Sunday */}
       <section className="relative py-40 md:py-24 text-white text-center">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -159,7 +159,7 @@ export default function EventsPage() {
               </div>
               <div className="text-white py-4">(GMT +1)</div>
             </div>
-            <Link href="/contact">
+            <Link href="mailto:elyonlifeministry@gmail.com">
               <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>
                 Contact us
               </Button>

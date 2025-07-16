@@ -25,7 +25,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="relative h-64 md:h-[440px] flex items-center justify-center text-white">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -154,7 +154,7 @@ export default function AboutPage() {
 
       {/* See You This Sunday */}
       <section className="relative py-40 md:py-24 text-white text-center">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

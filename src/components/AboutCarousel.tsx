@@ -13,7 +13,7 @@ const aboutImages = [
     alt: "Carousel 2",
   },
   {
-    src: "/images/healing.png",
+    src: "/images/about/carousel3.png",
     alt: "Carousel 3",
   },
 ];

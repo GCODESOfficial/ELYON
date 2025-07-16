@@ -27,7 +27,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center text-white">
-        <div className="absolute inset-0 bg-black/90 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         {/* Desktop background */}
         <div
           className="absolute inset-0 bg-cover bg-center hidden md:block"
@@ -212,7 +212,7 @@ export default function HomePage() {
 
       {/* See You This Sunday */}
       <section className="relative py-40 md:py-24 text-white text-center">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -251,7 +251,7 @@ export default function HomePage() {
               <div className="text-white py-4">(GMT +1)</div>
             </div>
             <Link
-              href="/contact"
+              href="mailto:elyonlifeministry@gmail.com"
             >
               <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
             </Link>

@@ -70,7 +70,7 @@ export default function GivePage() {
                   <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Prince Esshiett</p>
                   <div className="flex items-center justify-between">
                     <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>2163691943</p>
-                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2163691943")}> 
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2163691943")}>
                       {copied === "2163691943" ? (
                         <Check className="w-5 h-5 text-green-600" />
                       ) : (
@@ -84,14 +84,14 @@ export default function GivePage() {
               {/* Moniepoint MFB */}
               <div className="bg-[#F5F5F5] rounded-xl p-6">
                 <div className="flex items-center mb-4">
-                <Image src="/icons/monie.png" alt="Moniepoint Logo" width={32} height={32} className="w-8 h-8 mr-3" />
+                  <Image src="/icons/monie.png" alt="Moniepoint Logo" width={32} height={32} className="w-8 h-8 mr-3" />
                   <h3 className={`${dmSans.className} text-sm md:text-2xl font-bold text-[#1A1A1A]`}>Moniepoint MFB</h3>
                 </div>
                 <div className="text-left space-y-2">
                   <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Elyon Life Ministry</p>
                   <div className="flex items-center justify-between">
                     <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>8038128101</p>
-                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("8038128101")}> 
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("8038128101")}>
                       {copied === "8038128101" ? (
                         <Check className="w-5 h-5 text-green-600" />
                       ) : (
@@ -112,7 +112,7 @@ export default function GivePage() {
                   <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Prince Inyang Esshiet</p>
                   <div className="flex items-center justify-between">
                     <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>2432204975</p>
-                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432204975")}> 
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432204975")}>
                       {copied === "2432204975" ? (
                         <Check className="w-5 h-5 text-green-600" />
                       ) : (
@@ -133,7 +133,7 @@ export default function GivePage() {
                   <p className={`${dmSans.className} text-xs md:text-lg text-[#3C4A5A] font-medium`}>Prince Inyang Esshiet</p>
                   <div className="flex items-center justify-between">
                     <p className={`${dmSans.className} text-base md:text-xl font-semibold text-[#1A1A1A]`}>2432205350</p>
-                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432205350")}> 
+                    <button className="p-2 hover:bg-gray-100 rounded cursor-pointer" onClick={() => handleCopy("2432205350")}>
                       {copied === "2432205350" ? (
                         <Check className="w-5 h-5 text-green-600" />
                       ) : (
@@ -151,7 +151,7 @@ export default function GivePage() {
 
       {/* See You This Sunday */}
       <section className="relative py-40 md:py-24 text-white text-center">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -190,7 +190,7 @@ export default function GivePage() {
               <div className="text-white py-4">(GMT +1)</div>
             </div>
             <Link
-              href="/contact"
+              href="mailto:elyonlifeministry@gmail.com"
             >
               <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
             </Link>

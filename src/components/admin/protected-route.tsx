@@ -51,7 +51,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
               height={50}
             />
           </div>
-          <p className="text-[#1A1A1A]">Checking session...</p>
+          <p className="text-[#1A1A1A]">Loading...</p>
         </div>
       </div>
     )

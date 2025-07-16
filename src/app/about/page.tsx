@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
 import Link from "next/link"
 import Image from "next/image"
 import { Merriweather, DM_Sans } from 'next/font/google';

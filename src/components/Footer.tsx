@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import Link from "next/link"
+ import Link from "next/link"
 import Image from "next/image"
 import { FaWhatsapp } from "react-icons/fa";
-// import { FaXTwitter } from "react-icons/fa6";
 import { CgFacebook } from "react-icons/cg";
-import { TbBrandInstagramFilled } from "react-icons/tb";
 import { SiTelegram, SiYoutube } from "react-icons/si"
 import { BiLogoGmail } from "react-icons/bi";
 import { DM_Sans } from 'next/font/google';
@@ -13,7 +10,6 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['500', '600'],
 });
-
 
 
 export default function Footer() {
@@ -63,7 +59,7 @@ export default function Footer() {
               <p className={`block ${dmSans.className} font-medium text-xs md:text-base text-[#F8FFF8]`}>Oron road, Uyo, Akwa Ibom - Nigeria</p>
             </div>
             <div className="absolute -bottom-14 flex space-x-4">
-              <Link href="#" target="_blank" title="WhatsApp">
+              <Link href="https://wa.me/2348038128101" target="_blank" title="WhatsApp">
                 <FaWhatsapp className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
               </Link>
 

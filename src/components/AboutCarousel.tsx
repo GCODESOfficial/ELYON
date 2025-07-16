@@ -5,16 +5,32 @@ import Image from "next/image";
 
 const aboutImages = [
   {
-    src: "/images/about/carousel1.png",
+    src: "/images/about/carousel1.jpg",
     alt: "Carousel 1",
   },
   {
-    src: "/images/about/carousel2.png",
+    src: "/images/about/carousel2.jpg",
     alt: "Carousel 2",
   },
   {
-    src: "/images/about/carousel3.png",
+    src: "/images/about/carousel3.jpg",
     alt: "Carousel 3",
+  },
+    {
+    src: "/images/about/carousel4.jpg",
+    alt: "Carousel 4",
+  },
+  {
+    src: "/images/about/carousel5.jpg",
+    alt: "Carousel 5",
+  },
+  {
+    src: "/images/about/carousel6.jpg",
+    alt: "Carousel 6",
+  },
+    {
+    src: "/images/about/carousel7.jpg",
+    alt: "Carousel 7",
   },
 ];
 

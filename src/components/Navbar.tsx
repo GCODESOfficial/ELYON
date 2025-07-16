@@ -77,7 +77,7 @@ export default function Navbar() {
             <Link href="https://web.facebook.com/profile.php?id=61552813367120" target="_blank" title="Facebook">
               <CgFacebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
             </Link>
-            <Link href="#" target="_blank" title="WhatsApp">
+            <Link href="https://wa.me/2348038128101" target="_blank" title="WhatsApp">
               <FaWhatsapp className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
             </Link>
           </div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                 <Link href="https://web.facebook.com/profile.php?id=61552813367120" target="_blank" title="Facebook">
                   <CgFacebook className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
                 </Link>
-                <Link href="#" target="_blank" title="WhatsApp">
+                <Link href="https://wa.me/2348038128101" target="_blank" title="WhatsApp">
                   <FaWhatsapp className="w-5 h-5 hover:text-[#CFA83C] cursor-pointer" />
                 </Link>
               </div>

@@ -4,7 +4,7 @@
 import type React from "react";
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import { Save, Play } from "lucide-react";
+import { Save } from "lucide-react";
 
 export default function VideoForm() {
   const [formData, setFormData] = useState({
@@ -13,22 +13,8 @@ export default function VideoForm() {
     live_date: "",
   });
 
-  const [previewUrl, setPreviewUrl] = useState("");
-
-  const extractVideoId = (url: string) => {
-  const regex = /(?:youtube\.com\/(?:watch\?v=|embed\/|live\/)|youtu\.be\/)([\w-]{11})/;
-  const match = url.match(regex);
-  return match ? match[1] : null;
-};
-
   const handleUrlChange = (url: string) => {
     setFormData({ ...formData, youtubeUrl: url });
-    const videoId = extractVideoId(url);
-    if (videoId) {
-      setPreviewUrl(`https://www.youtube.com/embed/${videoId}`);
-    } else {
-      setPreviewUrl("");
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -48,7 +34,6 @@ export default function VideoForm() {
         title: "",
         live_date: "",
       });
-      setPreviewUrl("");
     }
   };
 

@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-
 import { supabase } from "@/lib/supabaseClient"
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -15,23 +14,26 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
   useEffect(() => {
     const getSession = async () => {
       const { data } = await supabase.auth.getSession()
-      if (data?.session) {
-        console.log("User is logged in:", data.session.user)
+      const session = data?.session
+
+      if (session) {
         setIsAuthenticated(true)
       } else {
-        console.log("User not logged in")
-        setIsAuthenticated(false)
+        router.replace("/cpanel")
       }
+
       setLoading(false)
     }
+
     getSession()
-    // Listen for auth state changes
+
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsAuthenticated(!!session)
       if (!session) {
-        router.push("/cpanel")
+        router.replace("/cpanel")
       }
     })
+
     return () => {
       listener?.subscription.unsubscribe()
     }
@@ -55,9 +57,9 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
     )
   }
 
-  if (!isAuthenticated) {
-    return null
+  if (!loading && isAuthenticated) {
+    return <>{children}</>
   }
 
-  return <>{children}</>
+  return null
 }

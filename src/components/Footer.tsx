@@ -14,8 +14,10 @@ const dmSans = DM_Sans({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060606] text-white pt-[300px] md:pt-[450px]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+  // <footer className="2xl:max-w-[1090px] 2xl:mx-auto bg-[#060606] text-white pt-[300px] md:pt-[450px]">
+    //   <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#060606] text-white pt-[300px] md:pt-[450px]">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row md:justify-between md:items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center mb-6 md:mb-0">

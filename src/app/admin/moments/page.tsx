@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import ProtectedRoute from "@/components/admin/protected-route"
 import { supabase } from "@/lib/supabaseClient"
 import { Trash2, Plus } from "lucide-react"
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"
@@ -44,7 +45,8 @@ export default function AdminMomentsPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <ProtectedRoute>
+      <div className="space-y-6">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-[#0D1B2A]">Moments</h2>
         <Dialog open={open} onOpenChange={setOpen}>
@@ -88,6 +90,7 @@ export default function AdminMomentsPage() {
           ))}
         </div>
       )}
-    </div>
+      </div>
+    </ProtectedRoute>
   )
 }

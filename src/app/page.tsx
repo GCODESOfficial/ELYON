@@ -49,7 +49,7 @@ export default function HomePage() {
 
       {/* Sharing God's Love Section */}
       <section className="pt-16 md:pt-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="order-2 md:order-1 flex-1">
               <div className="relative w-full h-full md:max-w-[475px] max-h-[480px]">

@@ -40,7 +40,7 @@ export default function HomePage() {
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
           <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
-          <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${merriweather.className}`}>Elyon Life Ministry</h1>
+          <h1 className={`text-4xl text-[#CFA83C] md:text-6xl font-bold mb-6 ${merriweather.className}`}>Elyon Life Ministry</h1>
           <p className={`text-lg md:text-xl max-w-2xl mx-auto mb-8 ${dmSans.className}`}>
             A place to worship, grow, and experience God&apos;s transforming love in community.
           </p>
@@ -102,7 +102,7 @@ export default function HomePage() {
             {/* Card 1: Sunday Worship Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/worship.jpg"
+                src="/images/worship.png"
                 alt="Sunday Worship Service"
                 width={400}
                 height={300}
@@ -121,7 +121,7 @@ export default function HomePage() {
             {/* Card 2: Healing and Deliverance Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/healing.jpg"
+                src="/images/healing.png"
                 alt="Healing and Deliverance Service"
                 width={400}
                 height={300}
@@ -140,7 +140,7 @@ export default function HomePage() {
             {/* Card 3: Communion Service */}
             <div className="relative group w-full overflow-hidden rounded-xl">
               <Image
-                src="/images/communion.jpg"
+                src="/images/communion.png"
                 alt="Communion Service"
                 width={400}
                 height={300}

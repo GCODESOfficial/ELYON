@@ -193,7 +193,7 @@ export default function AboutPage() {
               <div className="text-white py-4">(GMT +1)</div>
             </div>
             <Link
-              href="/contact"
+               href="mailto:elyonlifeministry@gmail.com"
             >
               <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
             </Link>

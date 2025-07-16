@@ -112,7 +112,7 @@ export default function VideoForm() {
           <div className="flex pt-6 border-t border-[#3C4A5A]">
             <button
               type="submit"
-              className="flex items-center cursor-pointer justify-center space-x-2 bg-[#CFA83C] text-white px-6 py-3 rounded-lg hover:bg-[#CFA83C]/90 transition-colors font-semibold"
+              className="flex items-center cursor-pointer justify-center space-x-2 bg-[#CFA83C] text-white px-6 py-3 rounded-full hover:bg-[#CFA83C]/90 transition-colors font-semibold"
             >
               <Save className="w-4 h-4" />
               <span>Save</span>

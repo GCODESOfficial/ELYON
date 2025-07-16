@@ -99,7 +99,7 @@ export default function AdminLiveVideosPage() {
         <h2 className="text-2xl font-bold text-[#0D1B2A]">Live Videos</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <button className="flex items-center cursor-pointer gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold">
+            <button className="flex items-center cursor-pointer gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-full font-semibold">
               <Plus className="w-4 h-4" /> Add Live Video
             </button>
           </DialogTrigger>
@@ -134,7 +134,7 @@ export default function AdminLiveVideosPage() {
               <div className="text-xs text-[#3C4A5A] mb-4">{video.live_date || ""}</div>
               <div className="flex flex-col gap-4 mt-2">
                 <button
-                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#b38c2c] transition"
+                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#b38c2c] transition"
                   onClick={() => handleArchive(video)}
                   title="Archive to Sermons"
                 >
@@ -142,7 +142,7 @@ export default function AdminLiveVideosPage() {
                   Archive
                 </button>
                 <button
-                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition"
+                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition"
                   onClick={() => handleDelete(video.id)}
                   title="Delete"
                 >

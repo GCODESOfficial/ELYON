@@ -60,7 +60,7 @@ export default function MomentsForm() {
           type="file"
           accept="video/mp4"
           onChange={(e) => setFile(e.target.files?.[0] || null)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-full text-sm"
         />
       </div>
 
@@ -72,13 +72,13 @@ export default function MomentsForm() {
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
+          className="w-full px-4 py-2 border border-gray-300 rounded-full text-sm"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#b89632] transition"
+        className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#CFA83C] text-white px-4 py-2 rounded-full font-semibold hover:bg-[#b89632] transition"
       >
         <Save className="w-4 h-4" />
         Upload Moment

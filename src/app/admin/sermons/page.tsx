@@ -68,7 +68,7 @@ export default function SermonsPage() {
                 <div className="font-semibold text-[#1A1A1A] mb-1">{sermon.title || "Untitled Sermon"}</div>
                 <div className="text-xs text-[#3C4A5A] mb-2">{sermon.sermon_date || ""}</div>
                 <button
-                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition mt-2"
+                  className="w-full flex items-center cursor-pointer justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 transition mt-2"
                   onClick={() => handleDelete(sermon.id)}
                   title="Delete"
                 >

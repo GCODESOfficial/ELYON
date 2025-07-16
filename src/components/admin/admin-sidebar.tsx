@@ -182,7 +182,7 @@ export default function AdminSidebar({
 
         <button
           onClick={handleLogout}
-          className={`w-full flex items-center cursor-pointer space-x-2 bg-[#B33A3A] text-white px-4 py-3 rounded-lg hover:bg-[#B33A3A]/90 transition-colors font-semibold ${
+          className={`w-full flex items-center cursor-pointer space-x-2 bg-[#B33A3A] text-white px-4 py-3 rounded-full hover:bg-[#B33A3A]/90 transition-colors font-semibold ${
             isCollapsed ? "justify-center px-2" : ""
           }`}
           title={isCollapsed ? "Logout" : ""}

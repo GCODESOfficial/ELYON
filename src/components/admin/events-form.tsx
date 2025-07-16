@@ -138,7 +138,7 @@ export default function EventsForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex items-center justify-center space-x-2 bg-[#CFA83C] text-white px-6 py-3 rounded-lg hover:bg-[#CFA83C]/90 cursor-pointer transition-colors font-semibold disabled:opacity-50"
+              className="flex items-center justify-center space-x-2 bg-[#CFA83C] text-white px-6 py-3 rounded-full hover:bg-[#CFA83C]/90 cursor-pointer transition-colors font-semibold disabled:opacity-50"
             >
               <Save className="w-4 h-4" />
               <span>{isSubmitting ? "Saving..." : "Save Images"}</span>

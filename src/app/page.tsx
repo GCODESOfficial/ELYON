@@ -49,17 +49,28 @@ export default function HomePage() {
       {/* Sharing God's Love Section */}
       <section className="pt-16 md:pt-28">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="order-2 md:order-1 flex-1">
-              <div className="relative w-full h-full md:max-w-[475px] max-h-[480px]">
+              <div className="relative h-full max-h-[480px] w-full lg:max-w-[475px]">
+  <Image
+    src="/images/mission.jpg"
+    alt="Worship service"
+    width={500}
+    height={500}
+    sizes="(max-width: 1024px) 100vw, 475px"
+    className="w-full h-full object-cover rounded-xl"
+  />
+</div>       
+              {/* <div className="relative h-full lg:max-w-[475px] max-h-[480px] bg-red-500">
                 <Image
                   src="/images/mission.jpg"
                   alt="Worship service"
-                  width={400}
-                  height={200}
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 768px) 100vw"
                   className="w-full h-full object-cover rounded-xl"
                 />
-              </div>
+              </div> */}
             </div>
             <div className="order-1 md:order-2 space-y-6 flex-1">
               <div className={`text-[#3C4A5A] text-xs md:text-[16px] font-medium uppercase tracking-wide ${dmSans.className}`}>Our Mission</div>
@@ -236,14 +247,14 @@ export default function HomePage() {
             <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
 
             <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
-              <div className="pt-2 px-2 flex justify-between items-center">
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+              <div className="pt-2 px-2 flex justify-between">
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   9:30am
                 </div>
               </div>

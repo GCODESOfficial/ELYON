@@ -22,7 +22,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
       {/* Hero Section */}
-      <section className="relative h-64 md:h-[440px] flex items-center justify-center text-white">
+      <section className="relative h-64 lg:h-[440px] flex items-center justify-center text-white">
         <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -30,9 +30,9 @@ export default function AboutPage() {
             backgroundImage: `url('/images/about/about-hero.png')`,
           }}
         ></div>
-        <div className="absolute z-20 left-0 md:left-14 bottom-0 p-4 md:p-8">
-          <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>About Us</h1>
-          <div className={`${dmSans.className}flex text-xs md:text-lg space-x-2 font-medium`}>
+        <div className="absolute z-20 left-0 lg:left-14 bottom-0 p-4 lg:p-8">
+          <h1 className={`${merriweather.className} text-xl lg:text-[40px] mb-4 font-bold`}>About Us</h1>
+          <div className={`${dmSans.className}flex text-xs lg:text-lg space-x-2 font-medium`}>
             <Link href="/" className="hover:text-[#CFA83C]">
               Home
             </Link>
@@ -45,12 +45,12 @@ export default function AboutPage() {
       {/* Meet Our Pastor Section */}
       <section className="py-16 md:py-24 w-full md:max-w-[1120px] mx-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="">
-              <div className={`text-[#3C4A5A] mb-4 md:mb-10 text-xs md:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Meet Our Pastor</div>
-              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>PRINCE ESSHIETT</h2>
-              <p className={`${dmSans.className} mb-4 md:mb-10 text-[#3C4A5A] text-base md:text-2xl font-semibold`}>General Overseer</p>
-              <div className={`${dmSans.className} text-sm md:textlg text-[#3C4A5A] leading-relaxed`}>
+              <div className={`text-[#3C4A5A] mb-4 lg:mb-10 text-xs lg:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Meet Our Pastor</div>
+              <h2 className={`text-2xl lg:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>PRINCE ESSHIETT</h2>
+              <p className={`${dmSans.className} mb-4 lg:mb-10 text-[#3C4A5A] text-base lg:text-2xl font-semibold`}>General Overseer</p>
+              <div className={`${dmSans.className} text-sm lg:textlg text-[#3C4A5A] leading-relaxed`}>
                 <p>
                   Prince Esshiett is a servant of God who has been in the ministry for a couple of years.
                   He spends his time being used by God to minister to people of all works of life irrespective of age, color, or race etc., in order to effect positive changes in their lives by the power of the Holy Ghost.
@@ -65,7 +65,7 @@ export default function AboutPage() {
                   alt="Prince Esshiett"
                   width={400}
                   height={500}
-                  className="w-full h-full max-h-[480px] object-cover"
+                  className="w-full h-full lg:max-h-[480px] object-cover"
                 />
               </div>
             </div>
@@ -74,9 +74,9 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16 bg-white w-full md:max-w-[1120px] mx-auto">
+      <section className="py-16 bg-white w-full lg:max-w-[1120px] mx-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Who We Are</div>
               <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A]`}>Our Story</h2>
@@ -178,13 +178,13 @@ export default function AboutPage() {
 
             <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
               <div className="pt-2 px-2 flex justify-between items-center">
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-4 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl`}>
+                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
                   9:30am
                 </div>
               </div>

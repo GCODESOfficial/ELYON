@@ -41,7 +41,7 @@ function EventsCarousel() {
   if (loading) return null;
   if (!images.length) {
     return (
-      <div className="w-full py-12 text-center lg:text-left text-xl text-[#CFA83C]">
+      <div className="w-full py-12 text-center text-xl text-[#CFA83C]">
         Stay tuned for new events coming soon
       </div>
     );

@@ -277,7 +277,7 @@ export default function HomePage() {
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-full lg:max-w-[708px]">
             <h2
-              className={`text-2xl text-center lg:text-left md:text-[40px] mb-5 md:mb-10 font-bold text-[#1A1A1A] ${merriweather.className}`}
+              className={`text-2xl text-center md:text-[40px] mb-5 md:mb-10 font-bold text-[#1A1A1A] ${merriweather.className}`}
             >
               Upcoming Events
             </h2>

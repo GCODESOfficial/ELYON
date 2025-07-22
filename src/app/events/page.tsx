@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Merriweather, DM_Sans } from 'next/font/google';
+import { Merriweather, DM_Sans } from "next/font/google";
 import MemoriesGallery from "@/components/MemoriesGallery";
 import EventsCarousel from "@/components/EventsCarousel";
 import GivingsCarousel from "@/components/GivingsCarousel";
 import { supabase } from "@/lib/supabaseClient";
 
-const merriweather = Merriweather({ subsets: ['latin'], weight: ['700'] });
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['500', '600'] });
+const merriweather = Merriweather({ subsets: ["latin"], weight: ["700"] });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: ["500", "600"] });
 
 export default function EventsPage() {
   const [moments, setMoments] = useState<
@@ -46,15 +46,25 @@ export default function EventsPage() {
           style={{ backgroundImage: `url('/images/events-hero.jpg')` }}
         ></div>
         <div className="absolute z-20 left-0 bottom-0 p-4 md:p-8">
-          <h1 className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}>Events</h1>
+          <h1
+            className={`${merriweather.className} text-xl md:text-[40px] mb-4 font-bold`}
+          >
+            Events
+          </h1>
         </div>
       </section>
 
       {/* Moments of Impact Section */}
       <section className="py-6 md:py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 md:text-center">
-          <h2 className={`text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-2 ${merriweather.className}`}>Moments of Impact</h2>
-          <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className}`}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            className={`text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-2 ${merriweather.className}`}
+          >
+            Moments of Impact
+          </h2>
+          <p
+            className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className}`}
+          >
             You shouldn’t have to serve or love alone. Look at past moments.
           </p>
 
@@ -67,7 +77,10 @@ export default function EventsPage() {
               {moments.slice(0, 6).map((moment) => (
                 <div key={moment.id} className="flex flex-col items-center">
                   <div className="w-full aspect-video rounded-lg overflow-hidden mb-2">
-                    <video controls className="w-full h-full object-cover rounded-lg">
+                    <video
+                      controls
+                      className="w-full h-full object-cover rounded-lg"
+                    >
                       <source src={moment.video_url} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
@@ -89,14 +102,25 @@ export default function EventsPage() {
           <EventsCarousel />
         </div>
       </section>
+      
+      {/* <section className="pt-6 pb-12 md:py-28">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            className={`text-2xl md:text-[32px] font-bold text-[#1A1A1A] mb-8 ${merriweather.className}`}
+          >
+            Upcoming Events
+          </h2>
+          <EventsCarousel />
+        </div>
+      </section> */}
 
       {/* Give from the Heart Section */}
-      <section className="pt-6 pb-8 md:py-0 bg-white w-full md:max-w-[1120px] mx-auto">
-        <div className="px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 md:items-center md:gap-0">
-          <div className="order-last md:order-first w-full max-w-[400px]">
-            <GivingsCarousel className="h-[320px] md:h-[450px]" />
+      <section className="pt-6 pb-8 lg:py-0 bg-white w-full lg:max-w-[1120px] mx-auto">
+        <div className="px-4 lg:px-0 flex flex-col lg:flex-row justify-between lg:items-center lg:gap-0">
+          <div className="order-last lg:order-first w-full xl:max-w-[400px]">
+            <GivingsCarousel className="h-[320px] lg:h-[450px]" />
           </div>
-          <div className="mb-8 md:mb-0 flex-1 md:max-w-[500px] md:mx-auto">
+          <div className="mb-8 lg:mb-0 flex-1 lg:max-w-[500px] lg:mx-auto">
             <h1 className={`${dmSans.className} text-xs md:text-base font-bold text-[#3C4A5A] mb-6`}>Giving</h1>
             <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A] mb-3`}>Give from the Heart</h2>
             <p className={`${dmSans.className} font-medium text-[#3C4A5A] text-sm md:text-xl mb-8`}>
@@ -113,7 +137,9 @@ export default function EventsPage() {
       {/* Memories Gallery */}
       <section className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Memories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">
+            Memories
+          </h2>
           <MemoriesGallery />
         </div>
       </section>
@@ -130,36 +156,58 @@ export default function EventsPage() {
 
         <div className="absolute left-1/2 top-0 -translate-x-1/2 z-20 w-full flex justify-center pointer-events-none">
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
-            <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
-            <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God&apos;s presence <br />can change everything.”
+            <div
+              className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}
+            >
+              Favourite Quote
+            </div>
+            <blockquote
+              className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}
+            >
+              “One moment in God&apos;s presence <br />
+              can change everything.”
             </blockquote>
           </div>
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2 translate-y-1/2 -bottom-10 md:-bottom-24 z-20 w-full px-4 flex justify-center pointer-events-none">
           <div className="bg-[#FFFFFF] max-w-[1120px] w-full mx-auto px-4 rounded-xl shadow-lg pointer-events-auto py-10 md:py-20">
-            <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
-            <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>
-              Grow stronger in your walk with God and connect with a loving church family.
+            <h2
+              className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}
+            >
+              See You This Sunday
+            </h2>
+            <p
+              className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}
+            >
+              Grow stronger in your walk with God and connect with a loving
+              church family.
             </p>
 
             <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
               <div className="pt-2 px-2 flex justify-between items-center">
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   9:30am
                 </div>
               </div>
               <div className="text-white py-4">(GMT +1)</div>
             </div>
             <Link href="mailto:elyonlifeministry@gmail.com">
-              <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>
+              <Button
+                className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}
+              >
                 Contact us
               </Button>
             </Link>

@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="order-2 md:order-1 flex-1">
               <div className="relative h-full max-h-[480px] w-full lg:max-w-[475px]">
                 <Image
-                  src="/images/mission.jpg"
+                  src="/images/mission.png"
                   alt="Worship service"
                   width={500}
                   height={500}

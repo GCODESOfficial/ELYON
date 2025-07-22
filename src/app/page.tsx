@@ -1,24 +1,24 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Merriweather, DM_Sans, Great_Vibes } from 'next/font/google';
+import Link from "next/link";
+import Image from "next/image";
+import { Merriweather, DM_Sans, Great_Vibes } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import TestimonialCarousel from "@/components/TestimonialsCarousel";
 import EventsCarousel from "@/components/EventsCarousel";
 import MemoriesGallery from "@/components/MemoriesGallery";
 
 const merriweather = Merriweather({
-  subsets: ['latin'],
-  weight: ['700'],
+  subsets: ["latin"],
+  weight: ["700"],
 });
 
 const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['500', '600'],
+  subsets: ["latin"],
+  weight: ["500", "600"],
 });
 
 const greatVibes = Great_Vibes({
-  subsets: ['latin'],
-  weight: ['400'],
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export default function HomePage() {
@@ -38,10 +38,21 @@ export default function HomePage() {
           style={{ backgroundImage: `url('/images/hero.png')` }}
         ></div>
         <div className="relative z-20 max-w-4xl mx-auto px-4">
-          <p className={`text-4xl md:text-[64px] mb-6 ${greatVibes.className}`}>Welcome to</p>
-          <h1 className={`text-4xl text-[#CFA83C] md:text-6xl font-bold mb-6 ${merriweather.className}`}>Elyon Life Ministry</h1>
-          <p className={`text-lg md:text-xl max-w-2xl mx-auto mb-8 ${dmSans.className}`}>
-            A place to worship, grow, and experience God&apos;s transforming love in community.
+          <p
+            className={`text-4xl md:text-[64px] lg:text-9xl mb-6 ${greatVibes.className}`}
+          >
+            Welcome to
+          </p>
+          <h1
+            className={`text-4xl text-[#CFA83C] md:text-6xl font-bold mb-6 ${merriweather.className}`}
+          >
+            Elyon Life Ministry
+          </h1>
+          <p
+            className={`text-lg md:text-xl max-w-2xl mx-auto mb-8 ${dmSans.className}`}
+          >
+            A place to worship, grow, and experience God&apos;s transforming
+            love in community.
           </p>
         </div>
       </section>
@@ -52,15 +63,15 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="order-2 md:order-1 flex-1">
               <div className="relative h-full max-h-[480px] w-full lg:max-w-[475px]">
-  <Image
-    src="/images/mission.jpg"
-    alt="Worship service"
-    width={500}
-    height={500}
-    sizes="(max-width: 1024px) 100vw, 475px"
-    className="w-full h-full object-cover rounded-xl"
-  />
-</div>       
+                <Image
+                  src="/images/mission.jpg"
+                  alt="Worship service"
+                  width={500}
+                  height={500}
+                  sizes="(max-width: 1024px) 100vw, 475px"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
               {/* <div className="relative h-full lg:max-w-[475px] max-h-[480px] bg-red-500">
                 <Image
                   src="/images/mission.jpg"
@@ -73,14 +84,28 @@ export default function HomePage() {
               </div> */}
             </div>
             <div className="order-1 md:order-2 space-y-6 flex-1">
-              <div className={`text-[#3C4A5A] text-xs md:text-[16px] font-medium uppercase tracking-wide ${dmSans.className}`}>Our Mission</div>
-              <h2 className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}>Sharing God&apos;s Love and Changing Lives</h2>
-              <p className={`text-[#1A1A1A] text-sm md:text-xl leading-relaxed ${dmSans.className}`}>
-                Since 2017, God has been the author of our journey as we seek to be ready for His Kingdom. We believe in
-                the power of community, worship, and spiritual growth to transform lives and bring hope to our world.
+              <div
+                className={`text-[#3C4A5A] text-xs md:text-[16px] font-medium uppercase tracking-wide ${dmSans.className}`}
+              >
+                Our Mission
+              </div>
+              <h2
+                className={`text-2xl md:text-[44px] font-bold text-[#1A1A1A] ${merriweather.className}`}
+              >
+                Sharing God&apos;s Love and Changing Lives
+              </h2>
+              <p
+                className={`text-[#1A1A1A] text-sm md:text-xl leading-relaxed ${dmSans.className}`}
+              >
+                Since 2017, God has been the author of our journey as we seek to
+                be ready for His Kingdom. We believe in the power of community,
+                worship, and spiritual growth to transform lives and bring hope
+                to our world.
               </p>
               <Link href="/about">
-                <Button className={`bg-[#C83737] text-white px-6 py-6 rounded-full font-medium text-sm md:text-lg cursor-pointer ${dmSans.className} hover:bg-[#C83737]/90 transition-colors`}>
+                <Button
+                  className={`bg-[#C83737] text-white px-6 py-6 rounded-full font-medium text-sm md:text-lg cursor-pointer ${dmSans.className} hover:bg-[#C83737]/90 transition-colors`}
+                >
                   Read More
                 </Button>
               </Link>
@@ -92,19 +117,33 @@ export default function HomePage() {
       {/* Quote Section */}
       <section className="pt-16 md:pt-28 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <blockquote className={`text-base md:text-[28px] font-semibold ${dmSans.className}`}>
-            &quot;And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of
-            many generations; and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in.&quot;
+          <blockquote
+            className={`text-base md:text-[28px] font-semibold ${dmSans.className}`}
+          >
+            &quot;And they that shall be of thee shall build the old waste
+            places: thou shalt raise up the foundations of many generations; and
+            thou shalt be called, The repairer of the breach, The restorer of
+            paths to dwell in.&quot;
           </blockquote>
-          <cite className={`text-[#C83737] mb-10 md:mb-0 text-sm md:text-2xl font-semibold ${dmSans.className}`}>- Isaiah 58:12 (KJV)</cite>
+          <cite
+            className={`text-[#C83737] mb-10 md:mb-0 text-sm md:text-2xl font-semibold ${dmSans.className}`}
+          >
+            - Isaiah 58:12 (KJV)
+          </cite>
         </div>
       </section>
 
       {/* Join Us Section */}
       <section className="md:mt-20 py-10 md:py-20 max-w-[1120px] rounded-xl mx-auto bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-5 md:mb-10 ${dmSans.className}`}>Fellowship with us</div>
-          <h2 className={`text-2xl md:text-[44px] mx-auto max-w-[571px] font-bold text-[#1A1A1A] mb-10 md:mb-20 ${merriweather.className}`}>
+          <div
+            className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-5 md:mb-10 ${dmSans.className}`}
+          >
+            Fellowship with us
+          </div>
+          <h2
+            className={`text-2xl md:text-[44px] mx-auto max-w-[571px] font-bold text-[#1A1A1A] mb-10 md:mb-20 ${merriweather.className}`}
+          >
             Join Us for Worship, Fellowship, and Growth
           </h2>
 
@@ -118,13 +157,31 @@ export default function HomePage() {
                 height={300}
                 className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
+
+              {/* Overlay on hover */}
               <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
-              <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
-                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className} group-hover:mb-6`}>Sunday <br />Worship Service</span>
+
+              {/* Title Text at Bottom - always visible, centered, responsive */}
+              <div className="absolute bottom-0 left-0 right-0 py-4 px-2 z-20 flex justify-center transition-all duration-300 group-hover:-translate-y-20">
+                <span
+                  className={`text-white text-sm md:text-2xl font-semibold text-center break-words leading-tight ${dmSans.className} group-hover:mb-6`}
+                >
+                  Sunday <br /> Worship Service
+                </span>
               </div>
+
+              {/* Hover Info Section - appears on hover only */}
               <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
                 <hr className="hidden md:block w-40 border-t-2 border-white my-2" />
-                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br />1st Service: 6:30am<br />2nd Service: 8:00am</span>
+                <span
+                  className={`text-white text-xs md:text-lg font-medium text-center ${dmSans.className}`}
+                >
+                  Timezone: GMT +1
+                  <br />
+                  1st Service: 6:30am
+                  <br />
+                  2nd Service: 8:00am
+                </span>
               </div>
             </div>
 
@@ -138,12 +195,26 @@ export default function HomePage() {
                 className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
               <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
-              <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
-                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Healing and <br />Deliverance Service</span>
+
+              {/* Main Title Text */}
+              <div className="absolute bottom-0 left-0 right-0 py-4 px-2 z-20 flex justify-center transition-all duration-300 group-hover:-translate-y-20">
+                <span
+                  className={`text-white text-sm md:text-2xl font-semibold text-center break-words leading-tight ${dmSans.className} group-hover:mb-6`}
+                >
+                  Healing and <br /> Deliverance Service
+                </span>
               </div>
+
+              {/* Hover Info Section */}
               <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
                 <hr className="hidden md:block w-40 border-t-2 border-white my-2" />
-                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br />Every Tuesday: 8:30am</span>
+                <span
+                  className={`text-white text-xs md:text-lg font-medium text-center ${dmSans.className}`}
+                >
+                  Timezone: GMT +1
+                  <br />
+                  Every Tuesday: 8:30am
+                </span>
               </div>
             </div>
 
@@ -157,12 +228,26 @@ export default function HomePage() {
                 className="w-full h-[340px] rounded-xl object-cover md:max-h-[357px] transition-transform duration-300 group-hover:scale-105"
               />
               <div className="hidden md:block absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-xl"></div>
-              <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 transition-all duration-300 group-hover:-translate-y-20">
-                <span className={`text-white text-sm md:text-2xl font-semibold ${dmSans.className}`}>Communion <br />Service</span>
+
+              {/* Main Title Text */}
+              <div className="absolute bottom-0 left-0 right-0 py-4 px-2 z-20 flex justify-center transition-all duration-300 group-hover:-translate-y-20">
+                <span
+                  className={`text-white text-sm md:text-2xl font-semibold text-center break-words leading-tight ${dmSans.className} group-hover:mb-6`}
+                >
+                  Communion <br /> Service
+                </span>
               </div>
+
+              {/* Hover Info Section */}
               <div className="absolute bottom-0 w-full py-4 flex flex-col items-center md:w-[288px] z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-y-0 translate-y-20">
                 <hr className="hidden md:block w-40 border-t-2 border-white my-2" />
-                <span className={`text-white text-xs md:text-lg font-medium ${dmSans.className}`}>Timezone: GMT +1<br />Every Friday: 6:30am</span>
+                <span
+                  className={`text-white text-xs md:text-lg font-medium text-center ${dmSans.className}`}
+                >
+                  Timezone: GMT +1
+                  <br />
+                  Every Friday: 6:30am
+                </span>
               </div>
             </div>
           </div>
@@ -172,8 +257,14 @@ export default function HomePage() {
       {/* Testimony Section */}
       <section className="py-10 md:py-20 bg-[#F5F5F5] md:bg-[#FFFFFF]">
         <div className="py-10 rounded-xl max-w-[1120px] bg-[#F5F5F5] md:bg-[#FFFFFF] mx-auto px-1 text-center">
-          <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-3 md:mb-6 ${dmSans.className}`}>Our stories</div>
-          <h2 className={`max-w-[408px] mx-auto text-lg md:text-2xl font-semibold text-[#1A1A1A] mb-10 md:20 ${dmSans.className}`}>
+          <div
+            className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-3 md:mb-6 ${dmSans.className}`}
+          >
+            Our stories
+          </div>
+          <h2
+            className={`max-w-[408px] mx-auto text-lg md:text-2xl font-semibold text-[#1A1A1A] mb-10 md:20 ${dmSans.className}`}
+          >
             Every testimony is a reminder that God is still working.
           </h2>
           {/* testimonials carousel */}
@@ -182,32 +273,77 @@ export default function HomePage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-16 max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="w-full max-w-[708px]">
-            <h2 className={`text-2xl md:text-[40px] mb-5 md:mb-10 font-bold text-[#1A1A1A] ${merriweather.className}`}>Upcoming Events</h2>
+      <section className="py-16 max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="w-full lg:max-w-[708px]">
+            <h2
+              className={`text-2xl text-center lg:text-left md:text-[40px] mb-5 md:mb-10 font-bold text-[#1A1A1A] ${merriweather.className}`}
+            >
+              Upcoming Events
+            </h2>
             <EventsCarousel />
           </div>
-          <div className="relative group">
-            <h1 className={`text-[#3C4A5A] mt-10 md:mt-0 mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}>Hear God’s Word <br />Spoken to Your Heart.</h1>
-            <Image
+
+          <div className="group">
+            <h1
+              className={`text-[#3C4A5A] text-center lg:text-left mt-10 md:mt-0 mb-5 md:mb-10 font-medium text-sm md:text-lg ${dmSans.className}`}
+            >
+              Hear God’s Word <br />
+              Spoken to Your Heart.
+            </h1>
+
+            <div className="relative w-full lg:max-w-[296px] h-full rounded-xl overflow-hidden">
+              <Image
+                src="/images/mission.jpg"
+                alt="Sunday Worship Service"
+                width={400}
+                height={300}
+                className="w-full h-full rounded-xl object-cover md:max-h-[400px]"
+              />
+
+              <div className="absolute inset-0 flex flex-col justify-end pb-6 md:pb-8 px-6 z-10">
+                <div
+                  className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}
+                >
+                  Sermons
+                </div>
+                <div
+                  className={`text-white text-2xl md:text-3xl font-bold mb-6 ${merriweather.className}`}
+                >
+                  God’s Word
+                </div>
+                <Link href="/sermons">
+                  <button className="bg-[#C83737] text-white cursor-pointer px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#B33A3A] transition-colors w-fit">
+                    Watch Now
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* <Image
               src="/images/mission.jpg"
               alt="Sunday Worship Service"
               width={400}
               height={300}
-              className="w-full md:max-w-[296px] h-full rounded-xl md:max-h-[400px] object-cover"
+              className="w-full lg:max-w-[296px] h-full rounded-xl md:max-h-[400px] object-cover"
             />
             <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
-              <div className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}>Sermons</div>
-              <div className={`text-white text-2xl md:text-3xl font-bold mb-6 ${merriweather.className}`}>God’s Word</div>
+              <div
+                className={`text-white text-xs mb-2 uppercase ${dmSans.className}`}
+              >
+                Sermons
+              </div>
+              <div
+                className={`text-white text-2xl md:text-3xl font-bold mb-6 ${merriweather.className}`}
+              >
+                God’s Word
+              </div>
               <Link href="/sermons">
                 <button className="bg-[#C83737] text-white cursor-pointer px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#B33A3A] transition-colors w-fit">
                   Watch Now
                 </button>
               </Link>
-            </div>
-          </div>
-          <div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -215,7 +351,9 @@ export default function HomePage() {
       {/* Memories Gallery */}
       <section className="py-16 bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">Memories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-12">
+            Memories
+          </h2>
           <MemoriesGallery />
         </div>
       </section>
@@ -233,9 +371,16 @@ export default function HomePage() {
         {/* Fave Quote */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 z-20 w-full flex justify-center pointer-events-none">
           <div className="relative max-w-4xl mx-auto px-4 pointer-events-auto">
-            <div className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}>Favourite Quote</div>
-            <blockquote className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}>
-              “One moment in God&apos;s presence <br />can change everything.”
+            <div
+              className={`${dmSans.className} text-[#F5F5F5] text-xs md:text-base font-medium uppercase tracking-wide mt-6 mb-5 md:mt-12 md:mb-10`}
+            >
+              Favourite Quote
+            </div>
+            <blockquote
+              className={`${dmSans.className} text-[#F5F5F5] text-xl md:text-3xl font-semibold mb-8`}
+            >
+              “One moment in God&apos;s presence <br />
+              can change everything.”
             </blockquote>
           </div>
         </div>
@@ -243,32 +388,49 @@ export default function HomePage() {
         {/* sunday time card*/}
         <div className="absolute left-1/2 -translate-x-1/2 translate-y-1/2 -bottom-10 md:-bottom-24 z-20 w-full px-4 flex justify-center pointer-events-none">
           <div className="bg-[#FFFFFF] max-w-[1120px] w-full mx-auto px-4 rounded-xl shadow-lg pointer-events-auto py-10 md:py-20">
-            <h2 className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}>See You This Sunday</h2>
-            <p className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}>Grow stronger in your walk with God and connect with a loving church family.</p>
+            <h2
+              className={`text-[#1A1A1A] text-2xl md:text-[44px] font-bold mb-6 ${merriweather.className}`}
+            >
+              See You This Sunday
+            </h2>
+            <p
+              className={`text-[#3C4A5A] text-sm md:text-lg mb-8 ${dmSans.className} max-w-[572px] mx-auto`}
+            >
+              Grow stronger in your walk with God and connect with a loving
+              church family.
+            </p>
 
             <div className="bg-[#1A1A1A] mb-4 flex flex-col md:max-w-[403px] mx-auto rounded-xl">
               <div className="pt-2 px-2 flex justify-between">
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   6:30am
                 </div>
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   8:00am
                 </div>
-                <div className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}>
+                <div
+                  className={`${dmSans.className} px-2 md:px-8 py-3 bg-[#FFFFFF] text-[#3C4A5A] font-bold border-2 border-[#1A1A1A] rounded-xl w-full`}
+                >
                   9:30am
                 </div>
               </div>
               <div className="text-white py-4">(GMT +1)</div>
             </div>
-            <Link
-              href="mailto:elyonlifeministry@gmail.com"
-            >
-              <Button className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}>Contact us</Button>
+            <Link href="mailto:elyonlifeministry@gmail.com">
+              <Button
+                className={`w-full cursor-pointer max-w-[403px] mx-auto bg-[#B33A3A] text-white py-4 rounded-xl hover:bg-[#B33A3A]/90 transition-colors font-semibold`}
+              >
+                Contact us
+              </Button>
             </Link>
           </div>
         </div>
         <div className="h-12 md:h-[350px]"></div>
       </section>
     </div>
-  )
+  );
 }

@@ -78,9 +78,9 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <div className={`text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Who We Are</div>
-              <h2 className={`${merriweather.className} text-2xl md:text-[44px] font-bold text-[#1A1A1A]`}>Our Story</h2>
-              <div className={`space-y-4 text-sm md:text-lg text-[#3C4A5A] leading-relaxed ${dmSans.className}`}>
+              <div className={`text-[#3C4A5A] text-xs lg:text-base font-medium uppercase tracking-wide ${dmSans.className}`}>Who We Are</div>
+              <h2 className={`${merriweather.className} text-2xl lg:text-[44px] font-bold text-[#1A1A1A]`}>Our Story</h2>
+              <div className={`space-y-4 text-sm lg:text-lg text-[#3C4A5A] leading-relaxed ${dmSans.className}`}>
                 <p>
                   A divine movement began in May 2017, geared towards the spiritual emancipation, restoration, and divine awakening of God&apos;s people. This movement, also known as Light and Fire Renaissance Commission  (LFRC), was used mightily by God to touch lives, save souls, and liberate God&apos;s people from all forms of darkness and spiritual captivity.
                 </p>
@@ -120,8 +120,8 @@ export default function AboutPage() {
 
       {/* Need Help Finding Us */}
       <section className="py-5 bg-[#F5F5F5]">
-        <div className="max-w-[1120px] flex flex-col md:flex-row md:justify-between md:items-center mx-auto px-4 lg:px-0">
-          <div className="max-w-[472px]">
+        <div className="max-w-[1120px] flex flex-col xl:flex-row xl:justify-between xl:items-center mx-auto px-4 xl:px-0">
+          <div className="w-full xl:max-w-[472px] text-center xl:text-left">
             <div className={`${dmSans.className}text-[#3C4A5A] text-xs md:text-base font-medium uppercase tracking-wide mb-4 md:mb-6`}>get directions</div>
             <h2 className={`${merriweather.className} text-2xl md:text-[40px] font-bold text-[#1A1A1A] mb-3 md:mb-5`}>Need help finding us?</h2>
             <p className={`${dmSans.className} font-medium text-sm md:text-base text-[#3C4A5A] mb-12`}>
@@ -129,7 +129,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="w-full md:w-[605px] h-[280px] md:h-[464px] rounded-lg overflow-hidden shadow-lg">
+          <div className="w-full xl:w-[605px] h-[280px] md:h-[464px] rounded-lg overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3974.2983501567373!2d7.95502507368158!3d5.055305338484146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNcKwMDMnMTkuMSJOIDfCsDU3JzI3LjQiRQ!5e0!3m2!1sen!2sng!4v1751973377559!5m2!1sen!2sng"
               className="w-full h-full border-0"

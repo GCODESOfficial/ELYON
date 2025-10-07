@@ -69,7 +69,7 @@ export default function Footer() {
                 <BiLogoGmail className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
               </Link>
 
-              <Link href="https://web.facebook.com/profile.php?id=61552813367120" target="_blank" title="Facebook">
+              <Link href="https://www.facebook.com/profile.php?id=61581976405555" target="_blank" title="Facebook">
                 <CgFacebook className="w-8 h-8 md:w-10 md:h-10 hover:text-[#CFA83C] border border-[#292929] hover:border-[#CFA83C] p-[6px] rounded-full cursor-pointer" />
               </Link>
 
